@@ -70,7 +70,7 @@ output/
 reports/
 data/
 analysis/
-resources/
+docs/
 
 #################################
 #if you have some approved exceptions, list them here
