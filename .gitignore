@@ -21,43 +21,38 @@ renv/python/
 renv/staging/
 
 #################################
-# Logs & intermediate files
+# OS / Editor
 #################################
-*.log
-*.out
-*.err
-*.bak
+.DS_Store
+*.swp
+*.swo
+*.tmp
+
+#################################
+# R / Python / Conda
+#################################
+.Rhistory
+.RData
+.Rproj.user/
+__pycache__/
+*.pyc
+.env
+.venv/
+renv/library/
+renv/python/
+renv/staging/
+
 
 #################################
 # Large & non-code artifacts
 #################################
-*.pdf
-*.docx
-*.pptx
-*.xlsx
-*.csv
-*.tsv
-*.zip
 *.tar.gz
 *.rds
-*.html
-*.png
-*.jpg
-*.jpeg
-*.tif
-*.tiff
-*.js
-*.txt
-*.bed
 *.bam
 *.bai
 *.vcf
-*.fasta
-*.fastq
-*.fq
 *.RData
-*.gif
-*.ico
+data/
 
 
 #################################
@@ -68,7 +63,7 @@ plots/
 results/
 output/
 reports/
-data/
+data/processed/
 analysis/
 docs/
 
