@@ -2,6 +2,8 @@
 
 This project investigates sex-stratified clinical and epigenetic subtypes of autism spectrum disorder (ASD) using neurodevelopmental outcome measures and whole-genome bisulfite sequencing (WGBS) methylation data. In our first aim, we apply sex-stratified clustering of clinical measures to identify distinct ASD subtypes within each sex. Building on these clinically defined subtypes, our second aim characterizes their epigenetic architecture through differential methylation analysis, then evaluates whether these methylation signatures can predict ASD diagnosis in an independent cohort. 
 
+---
+
 **Data type(s):** WGBS
 **Study/cohort:** CHARGE(Childhood Autism Risk from Genetics and Environments) and CHDS(Child Health Developmental Studies)
 **Genome build:** hg38
