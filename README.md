@@ -5,8 +5,11 @@ This project investigates sex-stratified clinical and epigenetic subtypes of aut
 ---
 
 **Data type(s):** WGBS
+
 **Study/cohort:** CHARGE(Childhood Autism Risk from Genetics and Environments) and CHDS(Child Health Developmental Studies)
+
 **Genome build:** hg38
+
 **Primary outputs:** Clinical subtypes, DMRs
 
 ---
