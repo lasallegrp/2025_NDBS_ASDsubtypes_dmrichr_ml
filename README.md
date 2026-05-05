@@ -1,11 +1,11 @@
-# Differential DNA Methylation Analysis in the GROWell Cohort Using WGBS
+# Methylation profiles of Sex-stratified Clinical Subtypes of ASD
 
-This repository contains the analysis pipeline for identifying differentially methylated regions (DMRs) from whole-genome bisulfite sequencing (WGBS) data generated in the GROWell study. The workflow processes methylation data from dried blood spot samples and performs region-level differential methylation analysis using DMRichR, integrating covariates and phenotype metadata to investigate associations between DNA methylation patterns and pregnancy-related outcomes. The pipeline includes steps for data preprocessing, CpG filtering, DMR detection, annotation, and downstream visualization to support reproducible epigenomic analysis within the GROWell cohort.
+This project investigates sex-stratified clinical and epigenetic subtypes of autism spectrum disorder (ASD) using neurodevelopmental outcome measures and whole-genome bisulfite sequencing (WGBS) methylation data. In our first aim, we apply sex-stratified clustering of clinical measures to identify distinct ASD subtypes within each sex. Building on these clinically defined subtypes, our second aim characterizes their epigenetic architecture through differential methylation analysis, then evaluates whether these methylation signatures can predict ASD diagnosis in an independent cohort. 
 
-**Data type(s):** WGBS and lipidomics  
-**Study/cohort:** GROWELL
+**Data type(s):** WGBS
+**Study/cohort:** CHARGE(Childhood Autism Risk from Genetics and Environments) and CHDS(Child Health Developmental Studies)
 **Genome build:** hg38
-**Primary outputs:** DMRs
+**Primary outputs:** Clinical subtypes, DMRs
 
 ---
 
@@ -13,60 +13,12 @@ This repository contains the analysis pipeline for identifying differentially me
 
 ### Clone
 ```bash
-git clone https://github.com/[ORG_OR_USER]/[REPO].git
-cd [REPO]
-```
-
-### Submodules (if used)
-```bash
-git submodule update --init --recursive
+git clone https://github.com/dreusebio/2025_NDBS_ASDsubtypes_dmrichr_ml_George.git
+cd 2025_NDBS_ASDsubtypes_dmrichr_ml_George
 ```
 
 ---
 
-## Configuration
-
-- `config/config.yaml` (single source of truth)
-- `config/samples.tsv` (sample sheet)
-- optional: `config/units.tsv`
-
-Human-curated metadata + provenance:
-- `metadata/`
-
-Reference versions/checksums:
-- `resources/manifest.tsv`
-
----
-
-## Run the analysis
-
-### Option A — Snakemake (if used)
-
-Dry-run:
-```bash
-snakemake -n
-```
-
-Local:
-```bash
-snakemake --profile workflow/profiles/local
-```
-
-SLURM:
-```bash
-snakemake --profile workflow/profiles/slurm -j 100
-```
-
-### Option B — SLURM submit scripts (no Snakemake required)
-
-```bash
-sbatch scripts/slurm/submit_rscript.sbatch
-```
-
-### Option C — Direct scripts
-
-```bash
-bash scripts/run_local.sh
 ```
 
 ---
