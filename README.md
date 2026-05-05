@@ -44,8 +44,7 @@ git clone https://github.com/dreusebio/2025_NDBS_ASDsubtypes_dmrichr_ml_George.g
 cd 2025_NDBS_ASDsubtypes_dmrichr_ml_George
 ```
 ---
-
-##Repository structure
+## Repository Structure
 
 - `config/` — configuration + sample sheets
 - `metadata/` — codebooks, data dictionaries, provenance notes (**committed**)
