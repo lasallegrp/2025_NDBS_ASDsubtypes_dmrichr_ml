@@ -14,9 +14,9 @@ library(patchwork)
 dir.create(result_dir, showWarnings = FALSE, recursive = TRUE)
 
 # --- Load classed ASD and TD data ---
+# Uses LPA_CONFIG$asd_classed_file so filename stays in sync with config
 ASD_classed <- readRDS(
-  file.path(PATHS[[sex_label]],
-            paste0("ASD_lpa_classed_k", LPA_CONFIG$best_K_ASD, ".rds")))
+  file.path(PATHS[[sex_label]], LPA_CONFIG$asd_classed_file))
 
 TD_classed <- readRDS(
   file.path(PATHS[[sex_label]],
@@ -45,14 +45,51 @@ TD_classed$Class <- factor(
 cat("ASD class distribution:\n");  print(table(ASD_classed$Class))
 cat("TD class distribution (relabelled):\n"); print(table(TD_classed$Class))
 
-# --- Merge on common columns only ---
-common_cols <- intersect(colnames(ASD_classed), colnames(TD_classed))
-cat("Shared columns for combined analysis:\n"); print(common_cols)
+# --- Identify shared neuromeasure columns automatically ---
+# intersect() finds all common columns across both datasets
+# We then exclude Class since it is metadata not a neuromeasure
+common_cols       <- intersect(colnames(ASD_classed), colnames(TD_classed))
+shared_neuro_vars <- common_cols[common_cols != "Class"]
 
-combined_data <- rbind(
-  ASD_classed[, common_cols],
-  TD_classed[,  common_cols]
-)
+cat("ASD columns:  ", paste(colnames(ASD_classed),  collapse = ", "), "\n")
+cat("TD  columns:  ", paste(colnames(TD_classed),   collapse = ", "), "\n")
+cat("Shared neuromeasure columns detected:\n")
+print(shared_neuro_vars)
+
+# --- Validate the overlap is meaningful ---
+if (length(shared_neuro_vars) == 0) {
+  stop(paste0(
+    "\n================================================================\n",
+    "ERROR: No shared neuromeasure columns found between ASD and TD.\n",
+    "----------------------------------------------------------------\n",
+    "ASD columns: ", paste(colnames(ASD_classed), collapse = ", "), "\n",
+    "TD  columns: ", paste(colnames(TD_classed),  collapse = ", "), "\n",
+    "----------------------------------------------------------------\n",
+    "Check that both classed .rds files contain overlapping measures.\n",
+    "ASD classed file: ", LPA_CONFIG$asd_classed_file, "\n",
+    "TD  classed file: TD_lpa_classed_k", LPA_CONFIG$best_K_TD, ".rds\n",
+    "================================================================\n"
+  ))
+}
+
+if (length(shared_neuro_vars) < 2) {
+  warning(paste0(
+    "\nWARNING: Only ", length(shared_neuro_vars),
+    " shared neuromeasure(s) found: ",
+    paste(shared_neuro_vars, collapse = ", "), "\n",
+    "Combined plots will have limited interpretability.\n",
+    "Consider whether ASD and TD input files have sufficient overlap.\n"
+  ))
+}
+
+cat("Proceeding with", length(shared_neuro_vars),
+    "shared neuromeasure(s) for combined analysis.\n")
+
+# --- Combine using shared columns ---
+ASD_subset_combined <- ASD_classed[, c(shared_neuro_vars, "Class")]
+TD_subset_combined  <- TD_classed[,  c(shared_neuro_vars, "Class")]
+
+combined_data <- rbind(ASD_subset_combined, TD_subset_combined)
 combined_data$Group <- c(
   rep("ASD", nrow(ASD_classed)),
   rep("TD",  nrow(TD_classed))
@@ -60,7 +97,7 @@ combined_data$Group <- c(
 
 cat("Combined dataset: n =", nrow(combined_data), "\n")
 
-plot_vars <- common_cols[common_cols != "Class"]
+plot_vars <- shared_neuro_vars
 
 # --- Combined profile line plot ---
 long_combined <- combined_data %>%

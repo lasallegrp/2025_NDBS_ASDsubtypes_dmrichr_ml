@@ -52,19 +52,21 @@ PATHS <- list(
 
 # --- Results paths (mirrors script numbering) ---
 RESULTS <- list(
-  cleaning          = file.path(ROOT, "results", "LPA", "01_cleaning"),
-  recoding          = file.path(ROOT, "results", "LPA", "02_recoding"),
-  subsets           = file.path(ROOT, "results", "LPA", "03_subsets"),
-  asd_males         = file.path(ROOT, "results", "LPA", "04_ASD_males"),
-  td_males          = file.path(ROOT, "results", "LPA", "05_TD_males"),
-  combined_males    = file.path(ROOT, "results", "LPA", "06_combined_males"),
-  asd_females       = file.path(ROOT, "results", "LPA", "07_ASD_females"),
-  td_females        = file.path(ROOT, "results", "LPA", "08_TD_females"),
-  combined_females  = file.path(ROOT, "results", "LPA", "09_combined_females")
+  # --- LPA results ---
+  cleaning         = file.path(ROOT, "results", "LPA", "01_cleaning"),
+  recoding         = file.path(ROOT, "results", "LPA", "02_recoding"),
+  subsets          = file.path(ROOT, "results", "LPA", "03_subsets"),
+  asd_males        = file.path(ROOT, "results", "LPA", "04_ASD_males"),
+  td_males         = file.path(ROOT, "results", "LPA", "05_TD_males"),
+  combined_males   = file.path(ROOT, "results", "LPA", "06_combined_males"),
+  asd_females      = file.path(ROOT, "results", "LPA", "07_ASD_females"),
+  td_females       = file.path(ROOT, "results", "LPA", "08_TD_females"),
+  combined_females = file.path(ROOT, "results", "LPA", "09_combined_females"),
+  dmrichr_inputs   = file.path(ROOT, "results", "LPA", "10_DMRichR_inputs")
 )
 
 # --- Raw data filename ---
-RAW_FILENAME <- "ASDandTDChildrenwithDNAfromDBS_M5514_13NOV23 (3) (1)(ASDandTDChildrenwithDNAfromDBS_) (1).csv"
+RAW_FILENAME <- "ASDandTDChildrenwithDNAfromDBS_M5514_13NOV23.csv"
 
 # --- Sample IDs to remove (failed library prep) ---
 FAILED_LIBRARY_PREP_IDS <- c(128203, 138483, 126305, 128165,
@@ -75,17 +77,47 @@ FAILED_LIBRARY_PREP_IDS <- c(128203, 138483, 126305, 128165,
 # Females: update after inspecting female ASD data
 NA_SAMPLE_IDS <- list(
   males   = c(125864, 138315),
-  females = NA_character_     # <-- UPDATE BEFORE RUNNING FEMALES
+  females = c()               # confirmed no NAs in female ADOS/ADI-R
 )
 
 # --- LPA settings ---
+# UPDATE — run models separately with different K limits
+# --- LPA settings ---
 LPA_CONFIG <- list(
-  models     = c(1, 2),
-  max_K_ASD  = 6,
-  max_K_TD   = 4,
-  best_K_ASD = 3,
-  best_K_TD  = 2
+  models = c(1, 2),
+
+  # --- K limits by sex ---
+  # Males (n=132): can support more classes
+  # Females (n=27): capped lower to avoid convergence failures
+  max_K_ASD_m1 = list(males = 6, females = 3),
+  max_K_ASD_m2 = list(males = 4, females = 2),
+  max_K_TD_m1 = list(males = 4, females = 3),
+  max_K_TD_m2 = list(males = 4, females = 2),  # females cap at 2 for Model 2
+  
+  # --- Chosen solutions by sex ---
+  # Update females after reviewing fit table from script 07
+  best_K_ASD   = list(males = 3, females = 2),
+  best_K_TD    = list(males = 2, females = 1),
+
+  # --- Model number chosen as best ---
+  best_model_ASD = list(males = 1, females = 1),
+  best_model_TD  = list(males = 1, females = 1),
+
+  # --- File names ---
+  asd_input_file   = "ASD_lpa_input_ADOS_ADIR_Mullen_Vine.rds",
+  asd_classed_file = list(
+    males   = "ASD_lpa_classed_Mullen_Vine_k3.rds",
+    females = "ASD_lpa_classed_Mullen_Vine_k2.rds"
+  ),
+  td_classed_file = list(
+  males   = "TD_lpa_classed_k2.rds",
+  females = "TD_lpa_classed_k1.rds"   # all females, no subgrouping
+  )
 )
+
+#skip LPA
+# Add a flag to skip TD LPA for females
+skip_TD_LPA = list(males = FALSE, females = TRUE)
 
 # --- Create all directories ---
 invisible(lapply(c(PATHS, RESULTS), function(p) {

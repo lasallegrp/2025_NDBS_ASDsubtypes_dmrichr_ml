@@ -1,7 +1,7 @@
 # ============================================================
 # 01_data_cleaning.R
 # Purpose: Load raw data, remove failed samples, merge batches
-# Output:  data/processed/ASDandTD_cleaned.rds
+# Output:  results/LPA/01_cleaning/ASDandTD_cleaned.rds
 #          results/LPA/01_cleaning/
 # ============================================================
 
@@ -34,8 +34,13 @@ cat("After removing failed samples:", nrow(ASDandTDGrandChildren_remove_8), "row
 # --- Separate George and Jules batches ---
 Jules_subset  <- ASDandTDGrandChildren_remove_8[
   ASDandTDGrandChildren_remove_8$Batch == "Jules", ]
+head(Jules_subset)
+dim(Jules_subset)
+
 George_subset <- ASDandTDGrandChildren_remove_8[
   grepl("George", ASDandTDGrandChildren_remove_8$Batch), ]
+head(George_subset)
+dim(George_subset)
 
 # --- Fix IBC vs Freezerworks ID ---
 Jules_subset_1a <- Jules_subset[, !colnames(Jules_subset) %in% "Freezerworks_ID"]
@@ -81,5 +86,5 @@ write.csv(cleaning_log,
 
 # --- Save cleaned data ---
 saveRDS(ASDandTD_cleaned,
-        file.path(PATHS$processed, "ASDandTD_cleaned.rds"))
+        file.path(RESULTS$cleaning, "ASDandTD_cleaned.rds"))
 cat("Saved: ASDandTD_cleaned.rds —", nrow(ASDandTD_cleaned), "rows\n")

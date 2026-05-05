@@ -1,21 +1,22 @@
 # ============================================================
 # 02_recode_variables.R
 # Purpose: Recode and rename all variables
-# Input:   data/processed/ASDandTD_cleaned.rds
-# Output:  data/processed/ASDandTD_recoded.rds
-#          results/LPA/02_recoding/
+# Input:   results/LPA/01_cleaning/ASDandTD_cleaned.rds
+# Output:  results/LPA/02_recoding/ASDandTD_recoded.rds
 # ============================================================
 
 library(tidyverse)
 source(here::here("scripts", "LPA", "config.R"))
 
-ASDandTD_cleaned <- readRDS(file.path(PATHS$processed, "ASDandTD_cleaned.rds"))
+ASDandTD_cleaned <- readRDS(file.path(RESULTS$cleaning, "ASDandTD_cleaned.rds"))
 
 # --- Recode diagnosis ---
+table(ASDandTD_cleaned$dx2)
 ASDandTD_cleaned$ASD <- ifelse(ASDandTD_cleaned$dx2 == 2, 1, 0)
 ASDandTD_cleaned$TD  <- ifelse(ASDandTD_cleaned$dx2 == 5, 1, 0)
 
 # --- Recode sex (1 = Male, 0 = Female) ---
+table(ASDandTD_cleaned$correctsex)
 ASDandTD_cleaned$correctsex <- ifelse(ASDandTD_cleaned$correctsex == "M", 1, 0)
 
 # --- Recode race ---
@@ -91,10 +92,11 @@ recode_summary <- data.frame(
                sum(ASDandTD_recoded$Child_TD_Status  == 0, na.rm = TRUE),
                sum(ASDandTD_recoded$Child_Sex        == 0, na.rm = TRUE))
 )
+print(recode_summary)
 write.csv(recode_summary,
           file.path(RESULTS$recoding, "recoding_summary.csv"),
           row.names = FALSE)
 
 saveRDS(ASDandTD_recoded,
-        file.path(PATHS$processed, "ASDandTD_recoded.rds"))
+        file.path(RESULTS$recoding, "ASDandTD_recoded.rds"))
 cat("Saved: ASDandTD_recoded.rds —", nrow(ASDandTD_recoded), "rows\n")
