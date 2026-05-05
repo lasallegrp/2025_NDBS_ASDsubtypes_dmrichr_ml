@@ -1,8 +1,11 @@
 # Methylation profiles of Sex-stratified Clinical Subtypes of ASD
 
+## Project overview
+
 This project investigates sex-stratified clinical and epigenetic subtypes of autism spectrum disorder (ASD) using neurodevelopmental outcome measures and whole-genome bisulfite sequencing (WGBS) methylation data. In our first aim, we apply sex-stratified clustering of clinical measures to identify distinct ASD subtypes within each sex. Building on these clinically defined subtypes, our second aim characterizes their epigenetic architecture through differential methylation analysis, then evaluates whether these methylation signatures can predict ASD diagnosis in an independent cohort. 
 
 ---
+## Project summary
 
 **Data type(s):** WGBS
 
@@ -14,6 +17,25 @@ This project investigates sex-stratified clinical and epigenetic subtypes of aut
 
 ---
 
+## Study design
+
+* **Design:** Case-Control
+* **Sample size:** 260 child participants from CHARGE and 196 from CHDS
+* **Biological sample:** Newborn Dried Blood
+
+**Outcomes:**
+
+* ASD Diagnosis
+* Neurodevelopmental Outcomes(Mullen,Vineland,SCQ,ADOS, and ADIR)
+
+**Statistical framework:** Clinical subtypes will be identified using Latent profile Analysis. DMRs will be identified using DMRichr. Machine Learning will be performed with random forrest.
+
+---
+
+## Analysis workflow
+
+---
+
 ## Quick start
 
 ### Clone
@@ -21,30 +43,26 @@ This project investigates sex-stratified clinical and epigenetic subtypes of aut
 git clone https://github.com/dreusebio/2025_NDBS_ASDsubtypes_dmrichr_ml_George.git
 cd 2025_NDBS_ASDsubtypes_dmrichr_ml_George
 ```
-
 ---
 
-```
-
----
-
-## Repository structure
+##Repository structure
 
 - `config/` — configuration + sample sheets
 - `metadata/` — codebooks, data dictionaries, provenance notes (**committed**)
-- `resources/` — reference versions + checksums (**committed**)
-- `workflow/` — orchestration workflows (**optional**)
+- `data/` — raw data (**not committed**)
 - `scripts/` — entrypoints + SLURM submit scripts
 - `analysis/` — downstream statistics/figures (optionally `renv`)
 - `docs/` — methods + workflow documentation
 - `results/` — generated outputs (**not committed**)
-- `logs/` — generated logs (**not committed**)
+- `reproducibility/` — how to generate environment (** committed**)
+- `test/` — examine test data  (** committed**)
 
 ---
 
-## Reproducibility standard
-
-See `docs/lab_reproducibility_standard.md`.
+## Team Members
+Janine LaSalle 
+George Eusebio Kuodza
+Giovani Pimentel-Solorio 
 
 ---
 
