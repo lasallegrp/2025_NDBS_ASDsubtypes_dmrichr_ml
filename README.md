@@ -60,7 +60,9 @@ cd 2025_NDBS_ASDsubtypes_dmrichr_ml_George
 
 ## Team Members
 Janine LaSalle 
+
 George Eusebio Kuodza
+
 Giovani Pimentel-Solorio 
 
 ---
