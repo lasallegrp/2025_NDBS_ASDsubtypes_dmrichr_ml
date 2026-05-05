@@ -40,8 +40,8 @@ This project investigates sex-stratified clinical and epigenetic subtypes of aut
 
 ### Clone
 ```bash
-git clone https://github.com/dreusebio/2025_NDBS_ASDsubtypes_dmrichr_ml_George.git
-cd 2025_NDBS_ASDsubtypes_dmrichr_ml_George
+git clone https://github.com/dreusebio/2025_NDBS_ASDsubtypes_dmrichr_ml.git
+cd 2025_NDBS_ASDsubtypes_dmrichr_ml
 ```
 ---
 ## Repository Structure
