@@ -1,7 +1,7 @@
 [workspace]
-name = "growell-wgbs-dmrichr"
+name = "2025_NDBS_ASDsubtypes_dmrichr_ml_George"
 version = "0.1.0"
-authors = ["George Eusebio Kuodza <gekuodza@health.ucdavis.edu>"]
+authors = ["George Eusebio Kuodza <gekuodza@health.ucdavis.edu>, Giovani Pimentel-Solorio <gpsolorio@ucdavis.edu>"]
 channels = ["conda-forge", "bioconda"]
 platforms = ["linux-64", "osx-64"]
 

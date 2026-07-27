@@ -1,72 +1,247 @@
-# Methylation profiles of Sex-stratified Clinical Subtypes of ASD
+# 2025_NDBS_ASDsubtypes_dmrichr_ml_George
+
+Methylation profiles of sex-stratified clinical subtypes of autism spectrum disorder using newborn dried blood spot WGBS data.
+
+---
 
 ## Project overview
 
-This project investigates sex-stratified clinical and epigenetic subtypes of autism spectrum disorder (ASD) using neurodevelopmental outcome measures and whole-genome bisulfite sequencing (WGBS) methylation data. In our first aim, we apply sex-stratified clustering of clinical measures to identify distinct ASD subtypes within each sex. Building on these clinically defined subtypes, our second aim characterizes their epigenetic architecture through differential methylation analysis, then evaluates whether these methylation signatures can predict ASD diagnosis in an independent cohort. 
+This project investigates sex-stratified clinical and epigenetic subtypes of autism spectrum disorder (ASD) using neurodevelopmental outcome measures and whole-genome bisulfite sequencing (WGBS) methylation data.
+
+The workflow has two main components:
+
+1. **Clinical subtype discovery** using sex-stratified latent profile analysis (LPA)
+2. **Differential methylation analysis** using DMRichR based on the subtype-derived comparisons
+
+Machine learning analyses will be added in a later phase.
 
 ---
+
 ## Project summary
 
-**Data type(s):** WGBS
-
-**Study/cohort:** CHARGE(Childhood Autism Risk from Genetics and Environments) and CHDS(Child Health Developmental Studies)
-
-**Genome build:** hg38
-
-**Primary outputs:** Clinical subtypes, DMRs
-
----
-
-## Study design
-
-* **Design:** Case-Control
-* **Sample size:** 260 child participants from CHARGE and 196 from CHDS
-* **Biological sample:** Newborn Dried Blood
-
-**Outcomes:**
-
-* ASD Diagnosis
-* Neurodevelopmental Outcomes(Mullen,Vineland,SCQ,ADOS, and ADIR)
-
-**Statistical framework:** Clinical subtypes will be identified using Latent profile Analysis. DMRs will be identified using DMRichr. Machine Learning will be performed with random forrest.
+| Feature                    | Detail                                                       |
+| -------------------------- | ------------------------------------------------------------ |
+| Data type                  | Whole Genome Bisulfite Sequencing                            |
+| Cohorts                    | CHARGE and CHDS                                              |
+| Genome build               | hg38                                                         |
+| Biological sample          | Newborn dried blood spots                                    |
+| Study design               | Case-control                                                 |
+| Total sample size          | 456 child participants                                       |
+| Primary clinical method    | Latent profile analysis                                      |
+| Primary methylation method | DMRichR                                                      |
+| Main outputs               | Clinical subtypes, DMRs, DMR annotations, enrichment results |
 
 ---
 
-## Analysis workflow
+## Cohort summary
+
+| Cohort    |     ASD | Typically Developing / Control |   Total |
+| --------- | ------: | -----------------------------: | ------: |
+| CHARGE    |     161 |                             99 |     260 |
+| CHDS      |      84 |                            112 |     196 |
+| **Total** | **245** |                        **211** | **456** |
+
+---
+
+## Outcomes and measures
+
+**Primary outcome**
+
+* ASD diagnosis
+
+**Neurodevelopmental measures**
+
+* Mullen Scales of Early Learning
+* Vineland Adaptive Behavior Scales
+* Social Communication Questionnaire
+* Autism Diagnostic Observation Schedule
+* Autism Diagnostic Interview-Revised
+
+**Methylation outputs**
+
+* Differentially methylated regions
+* Annotated DMRs
+* Enrichment results
+* Subtype-specific methylation signatures
+
+---
+
+## Workflow
+
+### 1. Latent profile analysis
+
+LPA scripts are located in:
+
+```text
+scripts/LPA/
+```
+
+Main outputs are written to:
+
+```text
+results/LPA/
+```
+
+This step identifies sex-stratified ASD and neurotypical clinical profiles and prepares DMRichR comparison files.
+
+### 2. DMRichR analysis
+
+DMRichR scripts are located in:
+
+```text
+scripts/DMRichR/
+```
+
+Main outputs are written to:
+
+```text
+results/DMRichR/
+```
+
+This step links Bismark cytosine reports, runs DMRichR comparisons, and generates DMR tables, annotations, enrichment outputs, and reports.
+
+### 3. Future machine learning
+
+Machine learning analyses will be developed later. Current DMRichR-generated machine learning folders are not considered the final project-specific ML workflow.
+
+---
+
+## Repository structure
+
+```text
+2025_NDBS_ASDsubtypes_dmrichr_ml_George/
+├── analysis/         # notebooks and analysis notes
+├── data/             # metadata and processed local data; sensitive files ignored
+├── docs/             # detailed workflow and methods documentation
+├── reproducibility/  # environment files and Pixi setup
+├── results/          # generated LPA and DMRichR outputs; large files ignored
+├── scripts/          # LPA and DMRichR scripts
+├── tests/            # smoke tests and example testing scripts
+├── CHANGELOG.md
+├── CITATION.cff
+├── LICENSE
+└── README.md
+```
 
 ---
 
 ## Quick start
 
-### Clone
+### Clone repository
+
 ```bash
 git clone https://github.com/dreusebio/2025_NDBS_ASDsubtypes_dmrichr_ml.git
 cd 2025_NDBS_ASDsubtypes_dmrichr_ml
 ```
----
-## Repository Structure
-
-- `config/` — configuration + sample sheets
-- `metadata/` — codebooks, data dictionaries, provenance notes (**committed**)
-- `data/` — raw data (**not committed**)
-- `scripts/` — entrypoints + SLURM submit scripts
-- `analysis/` — downstream statistics/figures (optionally `renv`)
-- `docs/` — methods + workflow documentation
-- `results/` — generated outputs (**not committed**)
-- `reproducibility/` — how to generate environment (** committed**)
-- `test/` — examine test data  (** committed**)
 
 ---
 
-## Team Members
-Janine LaSalle 
+## Reproducible environment
 
-George Eusebio Kuodza
+Environment files are located in:
 
-Giovani Pimentel-Solorio 
+```text
+reproducibility/
+├── env/
+└── pixi/
+```
+
+To install the Pixi environment:
+
+```bash
+cd reproducibility/pixi
+pixi install --concurrent-downloads 1 --concurrent-solves 1
+```
+
+To install DMRichR:
+
+```bash
+pixi run install-dmrichr
+```
+
+To check available Pixi tasks:
+
+```bash
+pixi task list
+```
+
+---
+
+## Running the analysis
+
+Run LPA scripts from the project root:
+
+```bash
+Rscript scripts/LPA/01_data_cleaning.R
+Rscript scripts/LPA/02_recode_variables.R
+Rscript scripts/LPA/03_subset_neuromeasures.R
+Rscript scripts/LPA/10_prepare_DMRichR_inputs.R
+```
+
+Run DMRichR setup:
+
+```bash
+bash scripts/DMRichR/01_link_bismark_reports.sh
+```
+
+Additional DMRichR settings are stored in:
+
+```text
+scripts/DMRichR/config_dmrichr.R
+```
+
+For detailed workflow instructions, see:
+
+```text
+docs/analysis_workflow.md
+```
+
+---
+
+## Data and file tracking
+
+Raw WGBS data, cytosine reports, `.rds`, `.RData`, DMRichR intermediate objects, and participant-level metadata are not intended to be committed to GitHub.
+
+These files should be excluded using `.gitignore`.
+
+The repository is intended to track:
+
+* scripts
+* configuration files
+* documentation
+* environment files
+* small non-sensitive summary outputs
+
+---
+
+## Team members
+
+* Janine LaSalle
+* George Eusebio Kuodza
+* Giovani Pimentel-Solorio
+
+---
+
+## Citation
+
+If using this workflow, please cite or acknowledge:
+
+* DMRichR
+* Bismark
+* DSS / bsseq and relevant Bioconductor tools
+* CHARGE and CHDS cohort resources where appropriate
 
 ---
 
 ## License
 
-MIT License (see `LICENSE`)
+MIT License. See `LICENSE`.
+
+---
+
+## Contact
+
+**George Eusebio Kuodza**
+Postdoctoral Scholar
+University of California, Davis
+[gekuodza@health.ucdavis.edu](mailto:gekuodza@health.ucdavis.edu)

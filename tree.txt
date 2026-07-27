@@ -1,0 +1,1637 @@
+.
+├── analysis
+│   ├── notebooks
+│   ├── README.md
+│   └── renv.lock
+├── CHANGELOG.md
+├── CITATION.cff
+├── data
+│   ├── metadata
+│   │   └── raw
+│   │       └── ASDandTDChildrenwithDNAfromDBS_M5514_13NOV23.csv
+│   └── processed
+│       ├── females
+│       │   ├── ASD_lpa_classed_Mullen_Vine_k2.rds
+│       │   ├── ASD_lpa_input_ADOS_ADIR_Mullen_Vine.rds
+│       │   ├── ASD_lpa_input_ADOS_ADIR.rds
+│       │   ├── ASD_mullen_vineland_full.rds
+│       │   ├── TD_lpa_classed_k1.rds
+│       │   ├── TD_lpa_classed_k2.rds
+│       │   ├── TD_lpa_input_Mullen_Vine_SCQ.rds
+│       │   └── TD_refined_comparison_group.rds
+│       └── males
+│           ├── ASD_lpa_classed_k3.rds
+│           ├── ASD_lpa_classed_Mullen_Vine_k3.rds
+│           ├── ASD_lpa_input_ADOS_ADIR_Mullen_Vine.rds
+│           ├── ASD_lpa_input_ADOS_ADIR.rds
+│           ├── ASD_mullen_vineland_full.rds
+│           ├── ASD_TD_combined_classed.rds
+│           ├── TD_lpa_classed_k2.rds
+│           ├── TD_lpa_input_Mullen_Vine_SCQ.rds
+│           └── TD_refined_comparison_group.rds
+├── docs
+│   ├── analysis_workflow.md
+│   ├── lab_reproducibility_standard.md
+│   └── methods.md
+├── LICENSE
+├── README.md
+├── reproducibility
+│   ├── env
+│   │   ├── environment.full.yml
+│   │   └── environment.portable.yml
+│   ├── pixi
+│   │   ├── install_dmrichr.R
+│   │   ├── pixi.lock
+│   │   ├── pixi.toml
+│   │   └── Rplots.pdf
+│   └── README.md
+├── results
+│   ├── DMRichR
+│   │   ├── females
+│   │   │   ├── ASD_comparisons
+│   │   │   │   └── Subtype1_ASD_vs_Subtype2_ASD
+│   │   │   │       ├── 00_std_err_logs
+│   │   │   │       │   ├── DMRichR_run.err
+│   │   │   │       │   └── DMRichR_run.out
+│   │   │   │       ├── 104947_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 104996_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 105273_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 115152_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 115186_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 135520_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 138247_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 138258_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 138316_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 138337_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 138349_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 138360_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 138362_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 138487_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 138542_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146640_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146641_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146697_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146707_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146728_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146763_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146820_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146843_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146883_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146893_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146900_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── 146902_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │   │       ├── CHARGE_dmrichr.slurm
+│   │   │   │       ├── DMReport.html
+│   │   │   │       ├── DMRichments
+│   │   │   │       │   ├── All DMRs_CpG_enrichments.pdf
+│   │   │   │       │   ├── All DMRs_CpG_enrichments.xlsx
+│   │   │   │       │   ├── All DMRs_genic_enrichments.pdf
+│   │   │   │       │   ├── All DMRs_genic_enrichments.xlsx
+│   │   │   │       │   ├── CpG_multi_plot.pdf
+│   │   │   │       │   ├── genic_multi_plot.pdf
+│   │   │   │       │   ├── Hypermethylated DMRs_CpG_enrichments.pdf
+│   │   │   │       │   ├── Hypermethylated DMRs_CpG_enrichments.xlsx
+│   │   │   │       │   ├── Hypermethylated DMRs_genic_enrichments.pdf
+│   │   │   │       │   ├── Hypermethylated DMRs_genic_enrichments.xlsx
+│   │   │   │       │   ├── Hypomethylated DMRs_CpG_enrichments.pdf
+│   │   │   │       │   ├── Hypomethylated DMRs_CpG_enrichments.xlsx
+│   │   │   │       │   ├── Hypomethylated DMRs_genic_enrichments.pdf
+│   │   │   │       │   └── Hypomethylated DMRs_genic_enrichments.xlsx
+│   │   │   │       ├── DMRs
+│   │   │   │       │   ├── background_annotated.xlsx
+│   │   │   │       │   ├── background_region_individual_smoothed_methylation.txt
+│   │   │   │       │   ├── backgroundRegions.bed
+│   │   │   │       │   ├── DMR_individual_smoothed_methylation.txt
+│   │   │   │       │   ├── DMRs_annotated.xlsx
+│   │   │   │       │   ├── DMRs.bed
+│   │   │   │       │   ├── DMRs.pdf
+│   │   │   │       │   ├── heatmap.pdf
+│   │   │   │       │   ├── human_imprinted_gene_overlaps.txt
+│   │   │   │       │   └── Rect_Manhtn.p.value.pdf
+│   │   │   │       ├── Extra
+│   │   │   │       │   └── bsseq_background.csv
+│   │   │   │       ├── Global
+│   │   │   │       │   ├── 20Kb Windows Density Plot.pdf
+│   │   │   │       │   ├── 20Kb Windows PCA.pdf
+│   │   │   │       │   ├── CpG Island Density Plot.pdf
+│   │   │   │       │   ├── CpG Island PCA.pdf
+│   │   │   │       │   ├── Single CpG Density Plot.pdf
+│   │   │   │       │   ├── Single CpG PCA.pdf
+│   │   │   │       │   └── smoothed_globalStats.xlsx
+│   │   │   │       ├── HOMER
+│   │   │   │       │   ├── background.bed
+│   │   │   │       │   ├── DMRs.bed
+│   │   │   │       │   ├── DMRs_hyper.bed
+│   │   │   │       │   └── DMRs_hypo.bed
+│   │   │   │       ├── interactiveMDS
+│   │   │   │       │   ├── 20Kb Windows MDS plot.html
+│   │   │   │       │   ├── CpG Island MDS plot.html
+│   │   │   │       │   ├── css
+│   │   │   │       │   │   ├── glimma.min.css
+│   │   │   │       │   │   └── src
+│   │   │   │       │   │       └── images
+│   │   │   │       │   │           ├── animated-overlay.gif
+│   │   │   │       │   │           ├── favicon.ico
+│   │   │   │       │   │           ├── sort_asc_disabled.png
+│   │   │   │       │   │           ├── sort_asc.png
+│   │   │   │       │   │           ├── sort_both.png
+│   │   │   │       │   │           ├── sort_desc_disabled.png
+│   │   │   │       │   │           ├── sort_desc.png
+│   │   │   │       │   │           ├── ui-bg_flat_0_aaaaaa_40x100.png
+│   │   │   │       │   │           ├── ui-bg_flat_75_ffffff_40x100.png
+│   │   │   │       │   │           ├── ui-bg_glass_55_fbf9ee_1x400.png
+│   │   │   │       │   │           ├── ui-bg_glass_65_ffffff_1x400.png
+│   │   │   │       │   │           ├── ui-bg_glass_75_dadada_1x400.png
+│   │   │   │       │   │           ├── ui-bg_glass_75_e6e6e6_1x400.png
+│   │   │   │       │   │           ├── ui-bg_glass_95_fef1ec_1x400.png
+│   │   │   │       │   │           ├── ui-bg_highlight-soft_75_cccccc_1x100.png
+│   │   │   │       │   │           ├── ui-icons_222222_256x240.png
+│   │   │   │       │   │           ├── ui-icons_2e83ff_256x240.png
+│   │   │   │       │   │           ├── ui-icons_454545_256x240.png
+│   │   │   │       │   │           ├── ui-icons_888888_256x240.png
+│   │   │   │       │   │           └── ui-icons_cd0a0a_256x240.png
+│   │   │   │       │   ├── js
+│   │   │   │       │   │   ├── 20Kb Windows MDS plot.js
+│   │   │   │       │   │   ├── CpG Island MDS plot.js
+│   │   │   │       │   │   ├── glimma.min.js
+│   │   │   │       │   │   └── Single CpG MDS plot.js
+│   │   │   │       │   └── Single CpG MDS plot.html
+│   │   │   │       ├── Machine_learning
+│   │   │   │       │   ├── common_dmrs_heatmap.pdf
+│   │   │   │       │   ├── Machine_learning_output_all.xlsx
+│   │   │   │       │   └── Machine_learning_report.html
+│   │   │   │       ├── Ontologies
+│   │   │   │       │   ├── enrichr.xlsx
+│   │   │   │       │   ├── GOfuncR_plot.pdf
+│   │   │   │       │   ├── GOfuncR_slimmed_results.xlsx
+│   │   │   │       │   ├── GOfuncR.xlsx
+│   │   │   │       │   ├── GREAT_plot.pdf
+│   │   │   │       │   ├── GREAT_results.xlsx
+│   │   │   │       │   └── GREAT_slimmed_results.xlsx
+│   │   │   │       ├── RData
+│   │   │   │       │   ├── bismark.RData
+│   │   │   │       │   ├── bsseq.RData
+│   │   │   │       │   ├── DMRs.RData
+│   │   │   │       │   ├── machineLearning.RData
+│   │   │   │       │   └── settings.RData
+│   │   │   │       ├── sample_info.xlsx
+│   │   │   │       └── sessionInfo.txt
+│   │   │   └── ASD_neurotypical_comparisons
+│   │   │       ├── Subtype1_ASD_vs_Neurotypical
+│   │   │       │   ├── 00_std_err_logs
+│   │   │       │   │   ├── DMRichR_run.err
+│   │   │       │   │   └── DMRichR_run.out
+│   │   │       │   ├── 104947_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 104996_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 105273_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 105301_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 105318_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 107268_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 107297_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 109095_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 115065_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 115186_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 129784_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 135520_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 138283_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 138391_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 138413_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 138488_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 138492_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 138542_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 146641_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 146697_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 146728_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 146794_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 146804_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 146820_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 146881_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 146883_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── 146902_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │       │   ├── CHARGE_dmrichr.slurm
+│   │   │       │   ├── DMReport.html
+│   │   │       │   ├── DMRichments
+│   │   │       │   │   ├── All DMRs_CpG_enrichments.pdf
+│   │   │       │   │   ├── All DMRs_CpG_enrichments.xlsx
+│   │   │       │   │   ├── All DMRs_genic_enrichments.pdf
+│   │   │       │   │   ├── All DMRs_genic_enrichments.xlsx
+│   │   │       │   │   ├── CpG_multi_plot.pdf
+│   │   │       │   │   ├── genic_multi_plot.pdf
+│   │   │       │   │   ├── Hypermethylated DMRs_CpG_enrichments.pdf
+│   │   │       │   │   ├── Hypermethylated DMRs_CpG_enrichments.xlsx
+│   │   │       │   │   ├── Hypermethylated DMRs_genic_enrichments.pdf
+│   │   │       │   │   ├── Hypermethylated DMRs_genic_enrichments.xlsx
+│   │   │       │   │   ├── Hypomethylated DMRs_CpG_enrichments.pdf
+│   │   │       │   │   ├── Hypomethylated DMRs_CpG_enrichments.xlsx
+│   │   │       │   │   ├── Hypomethylated DMRs_genic_enrichments.pdf
+│   │   │       │   │   └── Hypomethylated DMRs_genic_enrichments.xlsx
+│   │   │       │   ├── DMRs
+│   │   │       │   │   ├── background_annotated.xlsx
+│   │   │       │   │   ├── background_region_individual_smoothed_methylation.txt
+│   │   │       │   │   ├── backgroundRegions.bed
+│   │   │       │   │   ├── DMR_individual_smoothed_methylation.txt
+│   │   │       │   │   ├── DMRs_annotated.xlsx
+│   │   │       │   │   ├── DMRs.bed
+│   │   │       │   │   ├── DMRs.pdf
+│   │   │       │   │   ├── heatmap.pdf
+│   │   │       │   │   ├── human_imprinted_gene_overlaps.txt
+│   │   │       │   │   └── Rect_Manhtn.p.value.pdf
+│   │   │       │   ├── Extra
+│   │   │       │   │   └── bsseq_background.csv
+│   │   │       │   ├── Global
+│   │   │       │   │   ├── 20Kb Windows Density Plot.pdf
+│   │   │       │   │   ├── 20Kb Windows PCA.pdf
+│   │   │       │   │   ├── CpG Island Density Plot.pdf
+│   │   │       │   │   ├── CpG Island PCA.pdf
+│   │   │       │   │   ├── Single CpG Density Plot.pdf
+│   │   │       │   │   ├── Single CpG PCA.pdf
+│   │   │       │   │   └── smoothed_globalStats.xlsx
+│   │   │       │   ├── HOMER
+│   │   │       │   │   ├── background.bed
+│   │   │       │   │   ├── DMRs.bed
+│   │   │       │   │   ├── DMRs_hyper.bed
+│   │   │       │   │   └── DMRs_hypo.bed
+│   │   │       │   ├── interactiveMDS
+│   │   │       │   │   ├── 20Kb Windows MDS plot.html
+│   │   │       │   │   ├── CpG Island MDS plot.html
+│   │   │       │   │   ├── css
+│   │   │       │   │   │   ├── glimma.min.css
+│   │   │       │   │   │   └── src
+│   │   │       │   │   │       └── images
+│   │   │       │   │   │           ├── animated-overlay.gif
+│   │   │       │   │   │           ├── favicon.ico
+│   │   │       │   │   │           ├── sort_asc_disabled.png
+│   │   │       │   │   │           ├── sort_asc.png
+│   │   │       │   │   │           ├── sort_both.png
+│   │   │       │   │   │           ├── sort_desc_disabled.png
+│   │   │       │   │   │           ├── sort_desc.png
+│   │   │       │   │   │           ├── ui-bg_flat_0_aaaaaa_40x100.png
+│   │   │       │   │   │           ├── ui-bg_flat_75_ffffff_40x100.png
+│   │   │       │   │   │           ├── ui-bg_glass_55_fbf9ee_1x400.png
+│   │   │       │   │   │           ├── ui-bg_glass_65_ffffff_1x400.png
+│   │   │       │   │   │           ├── ui-bg_glass_75_dadada_1x400.png
+│   │   │       │   │   │           ├── ui-bg_glass_75_e6e6e6_1x400.png
+│   │   │       │   │   │           ├── ui-bg_glass_95_fef1ec_1x400.png
+│   │   │       │   │   │           ├── ui-bg_highlight-soft_75_cccccc_1x100.png
+│   │   │       │   │   │           ├── ui-icons_222222_256x240.png
+│   │   │       │   │   │           ├── ui-icons_2e83ff_256x240.png
+│   │   │       │   │   │           ├── ui-icons_454545_256x240.png
+│   │   │       │   │   │           ├── ui-icons_888888_256x240.png
+│   │   │       │   │   │           └── ui-icons_cd0a0a_256x240.png
+│   │   │       │   │   ├── js
+│   │   │       │   │   │   ├── 20Kb Windows MDS plot.js
+│   │   │       │   │   │   ├── CpG Island MDS plot.js
+│   │   │       │   │   │   ├── glimma.min.js
+│   │   │       │   │   │   └── Single CpG MDS plot.js
+│   │   │       │   │   └── Single CpG MDS plot.html
+│   │   │       │   ├── Machine_learning
+│   │   │       │   │   ├── common_dmrs_heatmap.pdf
+│   │   │       │   │   ├── Machine_learning_output_all.xlsx
+│   │   │       │   │   └── Machine_learning_report.html
+│   │   │       │   ├── Ontologies
+│   │   │       │   │   ├── enrichr_plot.pdf
+│   │   │       │   │   ├── enrichr_slimmed_results.xlsx
+│   │   │       │   │   ├── enrichr.xlsx
+│   │   │       │   │   ├── GOfuncR_plot.pdf
+│   │   │       │   │   ├── GOfuncR_slimmed_results.xlsx
+│   │   │       │   │   ├── GOfuncR.xlsx
+│   │   │       │   │   ├── GREAT_plot.pdf
+│   │   │       │   │   ├── GREAT_results.xlsx
+│   │   │       │   │   └── GREAT_slimmed_results.xlsx
+│   │   │       │   ├── RData
+│   │   │       │   │   ├── bismark.RData
+│   │   │       │   │   ├── bsseq.RData
+│   │   │       │   │   ├── DMRs.RData
+│   │   │       │   │   ├── machineLearning.RData
+│   │   │       │   │   └── settings.RData
+│   │   │       │   ├── sample_info.xlsx
+│   │   │       │   └── sessionInfo.txt
+│   │   │       └── Subtype2_ASD_vs_Neurotypical
+│   │   │           ├── 00_std_err_logs
+│   │   │           │   ├── DMRichR_run.err
+│   │   │           │   └── DMRichR_run.out
+│   │   │           ├── 105301_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 105318_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 107268_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 107297_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 109095_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 115065_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 115152_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 129784_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138247_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138258_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138283_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138316_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138337_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138349_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138360_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138362_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138391_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138413_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138487_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138488_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 138492_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 146640_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 146707_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 146763_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 146794_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 146804_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 146843_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 146881_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 146893_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── 146900_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │   │           ├── CHARGE_dmrichr.slurm
+│   │   │           ├── DMReport.html
+│   │   │           ├── DMRichments
+│   │   │           │   ├── All DMRs_CpG_enrichments.pdf
+│   │   │           │   ├── All DMRs_CpG_enrichments.xlsx
+│   │   │           │   ├── All DMRs_genic_enrichments.pdf
+│   │   │           │   ├── All DMRs_genic_enrichments.xlsx
+│   │   │           │   ├── CpG_multi_plot.pdf
+│   │   │           │   ├── genic_multi_plot.pdf
+│   │   │           │   ├── Hypermethylated DMRs_CpG_enrichments.pdf
+│   │   │           │   ├── Hypermethylated DMRs_CpG_enrichments.xlsx
+│   │   │           │   ├── Hypermethylated DMRs_genic_enrichments.pdf
+│   │   │           │   ├── Hypermethylated DMRs_genic_enrichments.xlsx
+│   │   │           │   ├── Hypomethylated DMRs_CpG_enrichments.pdf
+│   │   │           │   ├── Hypomethylated DMRs_CpG_enrichments.xlsx
+│   │   │           │   ├── Hypomethylated DMRs_genic_enrichments.pdf
+│   │   │           │   └── Hypomethylated DMRs_genic_enrichments.xlsx
+│   │   │           ├── DMRs
+│   │   │           │   ├── background_annotated.xlsx
+│   │   │           │   ├── background_region_individual_smoothed_methylation.txt
+│   │   │           │   ├── backgroundRegions.bed
+│   │   │           │   ├── DMR_individual_smoothed_methylation.txt
+│   │   │           │   ├── DMRs_annotated.xlsx
+│   │   │           │   ├── DMRs.bed
+│   │   │           │   ├── DMRs.pdf
+│   │   │           │   ├── heatmap.pdf
+│   │   │           │   ├── human_imprinted_gene_overlaps.txt
+│   │   │           │   └── Rect_Manhtn.p.value.pdf
+│   │   │           ├── Extra
+│   │   │           │   └── bsseq_background.csv
+│   │   │           ├── Global
+│   │   │           │   ├── 20Kb Windows Density Plot.pdf
+│   │   │           │   ├── 20Kb Windows PCA.pdf
+│   │   │           │   ├── CpG Island Density Plot.pdf
+│   │   │           │   ├── CpG Island PCA.pdf
+│   │   │           │   ├── Single CpG Density Plot.pdf
+│   │   │           │   ├── Single CpG PCA.pdf
+│   │   │           │   └── smoothed_globalStats.xlsx
+│   │   │           ├── HOMER
+│   │   │           │   ├── background.bed
+│   │   │           │   ├── DMRs.bed
+│   │   │           │   ├── DMRs_hyper.bed
+│   │   │           │   └── DMRs_hypo.bed
+│   │   │           ├── interactiveMDS
+│   │   │           │   ├── 20Kb Windows MDS plot.html
+│   │   │           │   ├── CpG Island MDS plot.html
+│   │   │           │   ├── css
+│   │   │           │   │   ├── glimma.min.css
+│   │   │           │   │   └── src
+│   │   │           │   │       └── images
+│   │   │           │   │           ├── animated-overlay.gif
+│   │   │           │   │           ├── favicon.ico
+│   │   │           │   │           ├── sort_asc_disabled.png
+│   │   │           │   │           ├── sort_asc.png
+│   │   │           │   │           ├── sort_both.png
+│   │   │           │   │           ├── sort_desc_disabled.png
+│   │   │           │   │           ├── sort_desc.png
+│   │   │           │   │           ├── ui-bg_flat_0_aaaaaa_40x100.png
+│   │   │           │   │           ├── ui-bg_flat_75_ffffff_40x100.png
+│   │   │           │   │           ├── ui-bg_glass_55_fbf9ee_1x400.png
+│   │   │           │   │           ├── ui-bg_glass_65_ffffff_1x400.png
+│   │   │           │   │           ├── ui-bg_glass_75_dadada_1x400.png
+│   │   │           │   │           ├── ui-bg_glass_75_e6e6e6_1x400.png
+│   │   │           │   │           ├── ui-bg_glass_95_fef1ec_1x400.png
+│   │   │           │   │           ├── ui-bg_highlight-soft_75_cccccc_1x100.png
+│   │   │           │   │           ├── ui-icons_222222_256x240.png
+│   │   │           │   │           ├── ui-icons_2e83ff_256x240.png
+│   │   │           │   │           ├── ui-icons_454545_256x240.png
+│   │   │           │   │           ├── ui-icons_888888_256x240.png
+│   │   │           │   │           └── ui-icons_cd0a0a_256x240.png
+│   │   │           │   ├── js
+│   │   │           │   │   ├── 20Kb Windows MDS plot.js
+│   │   │           │   │   ├── CpG Island MDS plot.js
+│   │   │           │   │   ├── glimma.min.js
+│   │   │           │   │   └── Single CpG MDS plot.js
+│   │   │           │   └── Single CpG MDS plot.html
+│   │   │           ├── Machine_learning
+│   │   │           │   ├── common_dmrs_heatmap.pdf
+│   │   │           │   ├── Machine_learning_output_all.xlsx
+│   │   │           │   └── Machine_learning_report.html
+│   │   │           ├── Ontologies
+│   │   │           │   ├── enrichr.xlsx
+│   │   │           │   ├── GOfuncR_plot.pdf
+│   │   │           │   ├── GOfuncR_slimmed_results.xlsx
+│   │   │           │   ├── GOfuncR.xlsx
+│   │   │           │   ├── GREAT_plot.pdf
+│   │   │           │   ├── GREAT_results.xlsx
+│   │   │           │   └── GREAT_slimmed_results.xlsx
+│   │   │           ├── RData
+│   │   │           │   ├── bismark.RData
+│   │   │           │   ├── Blocks.RData
+│   │   │           │   ├── bsseq.RData
+│   │   │           │   ├── DMRs.RData
+│   │   │           │   ├── machineLearning.RData
+│   │   │           │   └── settings.RData
+│   │   │           ├── sample_info.xlsx
+│   │   │           └── sessionInfo.txt
+│   │   └── males
+│   │       ├── ASD_comparisons
+│   │       │   ├── Subtype1_ASD_vs_Subtype2_ASD
+│   │       │   │   ├── 00_std_err_logs
+│   │       │   │   │   ├── DMRichR_run.err
+│   │       │   │   │   └── DMRichR_run.out
+│   │       │   │   ├── 104842_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 104858_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105129_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105151_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105161_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105204_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105284_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105306_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 107280_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 107300_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 107397_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 107433_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109021_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109076_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109123_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109172_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 114984_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115028_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115037_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115088_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115097_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115099_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115153_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115197_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 117981_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 126067_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 135582_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 135586_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 135600_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138134_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138169_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138206_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138219_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138280_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138284_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138328_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138356_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138426_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138434_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138458_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138478_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138553_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138563_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146362_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146372_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146547_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146626_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146642_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146646_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146649_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146651_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146652_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146656_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146657_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146666_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146676_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146681_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146683_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146699_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146702_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146710_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146713_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146716_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146723_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146734_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146751_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146781_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146784_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146801_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146811_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146848_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146850_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146864_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146871_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146884_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146888_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146901_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146921_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── CHARGE_dmrichr.slurm
+│   │       │   │   ├── DMReport.html
+│   │       │   │   ├── DMRichments
+│   │       │   │   │   ├── All DMRs_CpG_enrichments.pdf
+│   │       │   │   │   ├── All DMRs_CpG_enrichments.xlsx
+│   │       │   │   │   ├── All DMRs_genic_enrichments.pdf
+│   │       │   │   │   ├── All DMRs_genic_enrichments.xlsx
+│   │       │   │   │   ├── CpG_multi_plot.pdf
+│   │       │   │   │   ├── genic_multi_plot.pdf
+│   │       │   │   │   ├── Hypermethylated DMRs_CpG_enrichments.pdf
+│   │       │   │   │   ├── Hypermethylated DMRs_CpG_enrichments.xlsx
+│   │       │   │   │   ├── Hypermethylated DMRs_genic_enrichments.pdf
+│   │       │   │   │   ├── Hypermethylated DMRs_genic_enrichments.xlsx
+│   │       │   │   │   ├── Hypomethylated DMRs_CpG_enrichments.pdf
+│   │       │   │   │   ├── Hypomethylated DMRs_CpG_enrichments.xlsx
+│   │       │   │   │   ├── Hypomethylated DMRs_genic_enrichments.pdf
+│   │       │   │   │   └── Hypomethylated DMRs_genic_enrichments.xlsx
+│   │       │   │   ├── DMRs
+│   │       │   │   │   ├── background_annotated.xlsx
+│   │       │   │   │   ├── background_region_individual_smoothed_methylation.txt
+│   │       │   │   │   ├── backgroundRegions.bed
+│   │       │   │   │   ├── DMR_individual_smoothed_methylation.txt
+│   │       │   │   │   ├── DMRs_annotated.xlsx
+│   │       │   │   │   ├── DMRs.bed
+│   │       │   │   │   ├── DMRs.pdf
+│   │       │   │   │   ├── heatmap.pdf
+│   │       │   │   │   ├── human_imprinted_gene_overlaps.txt
+│   │       │   │   │   └── Rect_Manhtn.p.value.pdf
+│   │       │   │   ├── Extra
+│   │       │   │   │   └── bsseq_background.csv
+│   │       │   │   ├── Global
+│   │       │   │   │   ├── 20Kb Windows Density Plot.pdf
+│   │       │   │   │   ├── 20Kb Windows PCA.pdf
+│   │       │   │   │   ├── CpG Island Density Plot.pdf
+│   │       │   │   │   ├── CpG Island PCA.pdf
+│   │       │   │   │   ├── Single CpG Density Plot.pdf
+│   │       │   │   │   ├── Single CpG PCA.pdf
+│   │       │   │   │   └── smoothed_globalStats.xlsx
+│   │       │   │   ├── HOMER
+│   │       │   │   │   ├── background.bed
+│   │       │   │   │   ├── DMRs.bed
+│   │       │   │   │   ├── DMRs_hyper.bed
+│   │       │   │   │   └── DMRs_hypo.bed
+│   │       │   │   ├── interactiveMDS
+│   │       │   │   │   ├── 20Kb Windows MDS plot.html
+│   │       │   │   │   ├── CpG Island MDS plot.html
+│   │       │   │   │   ├── css
+│   │       │   │   │   │   ├── glimma.min.css
+│   │       │   │   │   │   └── src
+│   │       │   │   │   │       └── images
+│   │       │   │   │   │           ├── animated-overlay.gif
+│   │       │   │   │   │           ├── favicon.ico
+│   │       │   │   │   │           ├── sort_asc_disabled.png
+│   │       │   │   │   │           ├── sort_asc.png
+│   │       │   │   │   │           ├── sort_both.png
+│   │       │   │   │   │           ├── sort_desc_disabled.png
+│   │       │   │   │   │           ├── sort_desc.png
+│   │       │   │   │   │           ├── ui-bg_flat_0_aaaaaa_40x100.png
+│   │       │   │   │   │           ├── ui-bg_flat_75_ffffff_40x100.png
+│   │       │   │   │   │           ├── ui-bg_glass_55_fbf9ee_1x400.png
+│   │       │   │   │   │           ├── ui-bg_glass_65_ffffff_1x400.png
+│   │       │   │   │   │           ├── ui-bg_glass_75_dadada_1x400.png
+│   │       │   │   │   │           ├── ui-bg_glass_75_e6e6e6_1x400.png
+│   │       │   │   │   │           ├── ui-bg_glass_95_fef1ec_1x400.png
+│   │       │   │   │   │           ├── ui-bg_highlight-soft_75_cccccc_1x100.png
+│   │       │   │   │   │           ├── ui-icons_222222_256x240.png
+│   │       │   │   │   │           ├── ui-icons_2e83ff_256x240.png
+│   │       │   │   │   │           ├── ui-icons_454545_256x240.png
+│   │       │   │   │   │           ├── ui-icons_888888_256x240.png
+│   │       │   │   │   │           └── ui-icons_cd0a0a_256x240.png
+│   │       │   │   │   ├── js
+│   │       │   │   │   │   ├── 20Kb Windows MDS plot.js
+│   │       │   │   │   │   ├── CpG Island MDS plot.js
+│   │       │   │   │   │   ├── glimma.min.js
+│   │       │   │   │   │   └── Single CpG MDS plot.js
+│   │       │   │   │   └── Single CpG MDS plot.html
+│   │       │   │   ├── Machine_learning
+│   │       │   │   │   ├── common_dmrs_heatmap.pdf
+│   │       │   │   │   ├── Machine_learning_output_all.xlsx
+│   │       │   │   │   └── Machine_learning_report.html
+│   │       │   │   ├── Ontologies
+│   │       │   │   │   ├── enrichr.xlsx
+│   │       │   │   │   ├── GOfuncR_plot.pdf
+│   │       │   │   │   ├── GOfuncR_slimmed_results.xlsx
+│   │       │   │   │   ├── GOfuncR.xlsx
+│   │       │   │   │   ├── GREAT_plot.pdf
+│   │       │   │   │   ├── GREAT_results.xlsx
+│   │       │   │   │   └── GREAT_slimmed_results.xlsx
+│   │       │   │   ├── RData
+│   │       │   │   │   ├── bismark.RData
+│   │       │   │   │   ├── bsseq.RData
+│   │       │   │   │   ├── DMRs.RData
+│   │       │   │   │   ├── machineLearning.RData
+│   │       │   │   │   └── settings.RData
+│   │       │   │   ├── sample_info.xlsx
+│   │       │   │   └── sessionInfo.txt
+│   │       │   ├── Subtype1_ASD_vs_Subtype3_ASD
+│   │       │   │   ├── 00_std_err_logs
+│   │       │   │   │   ├── DMRichR_run.err
+│   │       │   │   │   └── DMRichR_run.out
+│   │       │   │   ├── 104795_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 104842_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 104955_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 104991_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105182_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105204_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105261_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105288_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 105306_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 107213_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 107280_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 107328_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 107334_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 107402_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109037_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109044_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109060_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109083_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109093_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109096_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109171_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 109172_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115008_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115037_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115092_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 115101_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 117981_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 126067_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 126251_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 128151_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 135574_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 135582_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138182_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138207_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138238_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138240_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138242_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138252_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138295_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138322_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138344_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138348_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138356_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138458_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138495_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138528_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138544_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138551_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138563_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138566_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 138574_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146362_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146372_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146547_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146633_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146642_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146656_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146663_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146666_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146669_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146676_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146678_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146702_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146713_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146725_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146729_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146745_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146750_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146753_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146759_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146768_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146781_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146786_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146808_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146815_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146850_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146864_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146871_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146920_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── 146921_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │   │   ├── CHARGE_dmrichr.slurm
+│   │       │   │   ├── DMReport.html
+│   │       │   │   ├── DMRichments
+│   │       │   │   │   ├── All DMRs_CpG_enrichments.pdf
+│   │       │   │   │   ├── All DMRs_CpG_enrichments.xlsx
+│   │       │   │   │   ├── All DMRs_genic_enrichments.pdf
+│   │       │   │   │   ├── All DMRs_genic_enrichments.xlsx
+│   │       │   │   │   ├── CpG_multi_plot.pdf
+│   │       │   │   │   ├── genic_multi_plot.pdf
+│   │       │   │   │   ├── Hypermethylated DMRs_CpG_enrichments.pdf
+│   │       │   │   │   ├── Hypermethylated DMRs_CpG_enrichments.xlsx
+│   │       │   │   │   ├── Hypermethylated DMRs_genic_enrichments.pdf
+│   │       │   │   │   ├── Hypermethylated DMRs_genic_enrichments.xlsx
+│   │       │   │   │   ├── Hypomethylated DMRs_CpG_enrichments.pdf
+│   │       │   │   │   ├── Hypomethylated DMRs_CpG_enrichments.xlsx
+│   │       │   │   │   ├── Hypomethylated DMRs_genic_enrichments.pdf
+│   │       │   │   │   └── Hypomethylated DMRs_genic_enrichments.xlsx
+│   │       │   │   ├── DMRs
+│   │       │   │   │   ├── background_annotated.xlsx
+│   │       │   │   │   ├── background_region_individual_smoothed_methylation.txt
+│   │       │   │   │   ├── backgroundRegions.bed
+│   │       │   │   │   ├── DMR_individual_smoothed_methylation.txt
+│   │       │   │   │   ├── DMRs_annotated.xlsx
+│   │       │   │   │   ├── DMRs.bed
+│   │       │   │   │   ├── DMRs.pdf
+│   │       │   │   │   ├── heatmap.pdf
+│   │       │   │   │   ├── human_imprinted_gene_overlaps.txt
+│   │       │   │   │   └── Rect_Manhtn.p.value.pdf
+│   │       │   │   ├── Extra
+│   │       │   │   │   └── bsseq_background.csv
+│   │       │   │   ├── Global
+│   │       │   │   │   ├── 20Kb Windows Density Plot.pdf
+│   │       │   │   │   ├── 20Kb Windows PCA.pdf
+│   │       │   │   │   ├── CpG Island Density Plot.pdf
+│   │       │   │   │   ├── CpG Island PCA.pdf
+│   │       │   │   │   ├── Single CpG Density Plot.pdf
+│   │       │   │   │   ├── Single CpG PCA.pdf
+│   │       │   │   │   └── smoothed_globalStats.xlsx
+│   │       │   │   ├── HOMER
+│   │       │   │   │   ├── background.bed
+│   │       │   │   │   ├── DMRs.bed
+│   │       │   │   │   ├── DMRs_hyper.bed
+│   │       │   │   │   └── DMRs_hypo.bed
+│   │       │   │   ├── interactiveMDS
+│   │       │   │   │   ├── 20Kb Windows MDS plot.html
+│   │       │   │   │   ├── CpG Island MDS plot.html
+│   │       │   │   │   ├── css
+│   │       │   │   │   │   ├── glimma.min.css
+│   │       │   │   │   │   └── src
+│   │       │   │   │   │       └── images
+│   │       │   │   │   │           ├── animated-overlay.gif
+│   │       │   │   │   │           ├── favicon.ico
+│   │       │   │   │   │           ├── sort_asc_disabled.png
+│   │       │   │   │   │           ├── sort_asc.png
+│   │       │   │   │   │           ├── sort_both.png
+│   │       │   │   │   │           ├── sort_desc_disabled.png
+│   │       │   │   │   │           ├── sort_desc.png
+│   │       │   │   │   │           ├── ui-bg_flat_0_aaaaaa_40x100.png
+│   │       │   │   │   │           ├── ui-bg_flat_75_ffffff_40x100.png
+│   │       │   │   │   │           ├── ui-bg_glass_55_fbf9ee_1x400.png
+│   │       │   │   │   │           ├── ui-bg_glass_65_ffffff_1x400.png
+│   │       │   │   │   │           ├── ui-bg_glass_75_dadada_1x400.png
+│   │       │   │   │   │           ├── ui-bg_glass_75_e6e6e6_1x400.png
+│   │       │   │   │   │           ├── ui-bg_glass_95_fef1ec_1x400.png
+│   │       │   │   │   │           ├── ui-bg_highlight-soft_75_cccccc_1x100.png
+│   │       │   │   │   │           ├── ui-icons_222222_256x240.png
+│   │       │   │   │   │           ├── ui-icons_2e83ff_256x240.png
+│   │       │   │   │   │           ├── ui-icons_454545_256x240.png
+│   │       │   │   │   │           ├── ui-icons_888888_256x240.png
+│   │       │   │   │   │           └── ui-icons_cd0a0a_256x240.png
+│   │       │   │   │   ├── js
+│   │       │   │   │   │   ├── 20Kb Windows MDS plot.js
+│   │       │   │   │   │   ├── CpG Island MDS plot.js
+│   │       │   │   │   │   ├── glimma.min.js
+│   │       │   │   │   │   └── Single CpG MDS plot.js
+│   │       │   │   │   └── Single CpG MDS plot.html
+│   │       │   │   ├── Machine_learning
+│   │       │   │   ├── Ontologies
+│   │       │   │   │   ├── enrichr.xlsx
+│   │       │   │   │   ├── GOfuncR_plot.pdf
+│   │       │   │   │   ├── GOfuncR_slimmed_results.xlsx
+│   │       │   │   │   ├── GOfuncR.xlsx
+│   │       │   │   │   ├── GREAT_plot.pdf
+│   │       │   │   │   ├── GREAT_results.xlsx
+│   │       │   │   │   └── GREAT_slimmed_results.xlsx
+│   │       │   │   ├── RData
+│   │       │   │   │   ├── bismark.RData
+│   │       │   │   │   ├── bsseq.RData
+│   │       │   │   │   ├── DMRs.RData
+│   │       │   │   │   └── settings.RData
+│   │       │   │   ├── sample_info.xlsx
+│   │       │   │   └── sessionInfo.txt
+│   │       │   └── Subtype2_ASD_vs_Subtype3_ASD
+│   │       │       ├── 00_std_err_logs
+│   │       │       │   ├── DMRichR_run.err
+│   │       │       │   └── DMRichR_run.out
+│   │       │       ├── 104795_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 104858_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 104955_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 104991_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 105129_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 105151_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 105161_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 105182_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 105261_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 105284_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 105288_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 107213_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 107300_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 107328_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 107334_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 107397_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 107402_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 107433_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 109021_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 109037_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 109044_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 109060_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 109076_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 109083_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 109093_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 109096_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 109123_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 109171_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 114984_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 115008_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 115028_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 115088_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 115092_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 115097_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 115099_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 115101_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 115153_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 115197_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 126251_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 128151_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 135574_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 135586_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 135600_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138134_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138169_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138182_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138206_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138207_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138219_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138238_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138240_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138242_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138252_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138280_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138284_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138295_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138322_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138328_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138344_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138348_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138426_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138434_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138478_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138495_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138528_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138544_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138551_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138553_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138566_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 138574_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146626_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146633_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146646_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146649_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146651_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146652_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146657_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146663_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146669_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146678_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146681_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146683_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146699_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146710_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146716_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146723_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146725_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146729_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146734_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146745_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146750_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146751_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146753_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146759_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146768_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146784_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146786_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146801_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146808_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146811_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146815_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146848_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146884_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146888_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146901_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── 146920_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │       │       ├── CHARGE_dmrichr.slurm
+│   │       │       ├── DMReport.html
+│   │       │       ├── DMRs
+│   │       │       │   ├── background_annotated.xlsx
+│   │       │       │   ├── background_region_individual_smoothed_methylation.txt
+│   │       │       │   ├── backgroundRegions.bed
+│   │       │       │   ├── DMR_individual_smoothed_methylation.txt
+│   │       │       │   ├── DMRs_annotated.xlsx
+│   │       │       │   ├── DMRs.bed
+│   │       │       │   └── DMRs.pdf
+│   │       │       ├── Extra
+│   │       │       │   └── bsseq_background.csv
+│   │       │       ├── Global
+│   │       │       │   ├── 20Kb Windows Density Plot.pdf
+│   │       │       │   ├── 20Kb Windows PCA.pdf
+│   │       │       │   └── smoothed_globalStats.xlsx
+│   │       │       ├── HOMER
+│   │       │       │   ├── background.bed
+│   │       │       │   ├── DMRs.bed
+│   │       │       │   ├── DMRs_hyper.bed
+│   │       │       │   └── DMRs_hypo.bed
+│   │       │       ├── interactiveMDS
+│   │       │       │   ├── 20Kb Windows MDS plot.html
+│   │       │       │   ├── css
+│   │       │       │   │   ├── glimma.min.css
+│   │       │       │   │   └── src
+│   │       │       │   │       └── images
+│   │       │       │   │           ├── animated-overlay.gif
+│   │       │       │   │           ├── favicon.ico
+│   │       │       │   │           ├── sort_asc_disabled.png
+│   │       │       │   │           ├── sort_asc.png
+│   │       │       │   │           ├── sort_both.png
+│   │       │       │   │           ├── sort_desc_disabled.png
+│   │       │       │   │           ├── sort_desc.png
+│   │       │       │   │           ├── ui-bg_flat_0_aaaaaa_40x100.png
+│   │       │       │   │           ├── ui-bg_flat_75_ffffff_40x100.png
+│   │       │       │   │           ├── ui-bg_glass_55_fbf9ee_1x400.png
+│   │       │       │   │           ├── ui-bg_glass_65_ffffff_1x400.png
+│   │       │       │   │           ├── ui-bg_glass_75_dadada_1x400.png
+│   │       │       │   │           ├── ui-bg_glass_75_e6e6e6_1x400.png
+│   │       │       │   │           ├── ui-bg_glass_95_fef1ec_1x400.png
+│   │       │       │   │           ├── ui-bg_highlight-soft_75_cccccc_1x100.png
+│   │       │       │   │           ├── ui-icons_222222_256x240.png
+│   │       │       │   │           ├── ui-icons_2e83ff_256x240.png
+│   │       │       │   │           ├── ui-icons_454545_256x240.png
+│   │       │       │   │           ├── ui-icons_888888_256x240.png
+│   │       │       │   │           └── ui-icons_cd0a0a_256x240.png
+│   │       │       │   └── js
+│   │       │       │       ├── 20Kb Windows MDS plot.js
+│   │       │       │       └── glimma.min.js
+│   │       │       ├── RData
+│   │       │       │   ├── bismark.RData
+│   │       │       │   ├── bsseq.RData
+│   │       │       │   ├── DMRs.RData
+│   │       │       │   └── settings.RData
+│   │       │       └── sample_info.xlsx
+│   │       └── ASD_neurotypical_comparisons
+│   │           ├── Subtype1_ASD_vs_Neurotypical
+│   │           │   ├── 00_std_err_logs
+│   │           │   │   ├── DMRichR_run.err
+│   │           │   │   └── DMRichR_run.out
+│   │           │   ├── 104842_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 104846_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 104881_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 104951_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 105135_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 105204_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 105306_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107280_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107284_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107287_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107305_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107344_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107367_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107384_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107417_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107419_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 109032_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 109075_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 109089_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 109172_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 114992_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115011_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115019_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115037_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115062_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115093_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115207_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 117981_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 126067_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 126272_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 135582_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138168_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138178_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138179_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138185_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138186_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138235_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138311_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138356_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138368_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138371_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138378_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138382_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138390_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138404_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138414_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138421_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138458_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138494_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138506_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138508_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138512_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138520_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138535_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138558_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138563_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146362_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146372_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146547_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146558_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146642_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146656_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146666_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146676_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146702_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146713_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146722_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146781_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146787_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146840_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146841_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146850_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146864_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146871_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146916_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146921_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146922_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── CHARGE_dmrichr.slurm
+│   │           │   ├── DMReport.html
+│   │           │   ├── DMRichments
+│   │           │   │   ├── All DMRs_CpG_enrichments.pdf
+│   │           │   │   ├── All DMRs_CpG_enrichments.xlsx
+│   │           │   │   ├── All DMRs_genic_enrichments.pdf
+│   │           │   │   ├── All DMRs_genic_enrichments.xlsx
+│   │           │   │   ├── CpG_multi_plot.pdf
+│   │           │   │   ├── genic_multi_plot.pdf
+│   │           │   │   ├── Hypermethylated DMRs_CpG_enrichments.pdf
+│   │           │   │   ├── Hypermethylated DMRs_CpG_enrichments.xlsx
+│   │           │   │   ├── Hypermethylated DMRs_genic_enrichments.pdf
+│   │           │   │   ├── Hypermethylated DMRs_genic_enrichments.xlsx
+│   │           │   │   ├── Hypomethylated DMRs_CpG_enrichments.pdf
+│   │           │   │   ├── Hypomethylated DMRs_CpG_enrichments.xlsx
+│   │           │   │   ├── Hypomethylated DMRs_genic_enrichments.pdf
+│   │           │   │   └── Hypomethylated DMRs_genic_enrichments.xlsx
+│   │           │   ├── DMRs
+│   │           │   │   ├── background_annotated.xlsx
+│   │           │   │   ├── background_region_individual_smoothed_methylation.txt
+│   │           │   │   ├── backgroundRegions.bed
+│   │           │   │   ├── DMR_individual_smoothed_methylation.txt
+│   │           │   │   ├── DMRs_annotated.xlsx
+│   │           │   │   ├── DMRs.bed
+│   │           │   │   ├── DMRs.pdf
+│   │           │   │   ├── heatmap.pdf
+│   │           │   │   ├── human_imprinted_gene_overlaps.txt
+│   │           │   │   └── Rect_Manhtn.p.value.pdf
+│   │           │   ├── Extra
+│   │           │   │   └── bsseq_background.csv
+│   │           │   ├── Global
+│   │           │   │   ├── 20Kb Windows Density Plot.pdf
+│   │           │   │   ├── 20Kb Windows PCA.pdf
+│   │           │   │   ├── CpG Island Density Plot.pdf
+│   │           │   │   ├── CpG Island PCA.pdf
+│   │           │   │   ├── Single CpG Density Plot.pdf
+│   │           │   │   ├── Single CpG PCA.pdf
+│   │           │   │   └── smoothed_globalStats.xlsx
+│   │           │   ├── HOMER
+│   │           │   │   ├── background.bed
+│   │           │   │   ├── DMRs.bed
+│   │           │   │   ├── DMRs_hyper.bed
+│   │           │   │   └── DMRs_hypo.bed
+│   │           │   ├── interactiveMDS
+│   │           │   │   ├── 20Kb Windows MDS plot.html
+│   │           │   │   ├── CpG Island MDS plot.html
+│   │           │   │   ├── css
+│   │           │   │   │   ├── glimma.min.css
+│   │           │   │   │   └── src
+│   │           │   │   │       └── images
+│   │           │   │   │           ├── animated-overlay.gif
+│   │           │   │   │           ├── favicon.ico
+│   │           │   │   │           ├── sort_asc_disabled.png
+│   │           │   │   │           ├── sort_asc.png
+│   │           │   │   │           ├── sort_both.png
+│   │           │   │   │           ├── sort_desc_disabled.png
+│   │           │   │   │           ├── sort_desc.png
+│   │           │   │   │           ├── ui-bg_flat_0_aaaaaa_40x100.png
+│   │           │   │   │           ├── ui-bg_flat_75_ffffff_40x100.png
+│   │           │   │   │           ├── ui-bg_glass_55_fbf9ee_1x400.png
+│   │           │   │   │           ├── ui-bg_glass_65_ffffff_1x400.png
+│   │           │   │   │           ├── ui-bg_glass_75_dadada_1x400.png
+│   │           │   │   │           ├── ui-bg_glass_75_e6e6e6_1x400.png
+│   │           │   │   │           ├── ui-bg_glass_95_fef1ec_1x400.png
+│   │           │   │   │           ├── ui-bg_highlight-soft_75_cccccc_1x100.png
+│   │           │   │   │           ├── ui-icons_222222_256x240.png
+│   │           │   │   │           ├── ui-icons_2e83ff_256x240.png
+│   │           │   │   │           ├── ui-icons_454545_256x240.png
+│   │           │   │   │           ├── ui-icons_888888_256x240.png
+│   │           │   │   │           └── ui-icons_cd0a0a_256x240.png
+│   │           │   │   ├── js
+│   │           │   │   │   ├── 20Kb Windows MDS plot.js
+│   │           │   │   │   ├── CpG Island MDS plot.js
+│   │           │   │   │   ├── glimma.min.js
+│   │           │   │   │   └── Single CpG MDS plot.js
+│   │           │   │   └── Single CpG MDS plot.html
+│   │           │   ├── Machine_learning
+│   │           │   │   ├── common_dmrs_heatmap.pdf
+│   │           │   │   ├── Machine_learning_output_all.xlsx
+│   │           │   │   └── Machine_learning_report.html
+│   │           │   ├── Ontologies
+│   │           │   │   ├── enrichr.xlsx
+│   │           │   │   ├── GOfuncR_plot.pdf
+│   │           │   │   ├── GOfuncR_slimmed_results.xlsx
+│   │           │   │   ├── GOfuncR.xlsx
+│   │           │   │   ├── GREAT_plot.pdf
+│   │           │   │   ├── GREAT_results.xlsx
+│   │           │   │   └── GREAT_slimmed_results.xlsx
+│   │           │   ├── RData
+│   │           │   │   ├── bismark.RData
+│   │           │   │   ├── bsseq.RData
+│   │           │   │   ├── DMRs.RData
+│   │           │   │   ├── machineLearning.RData
+│   │           │   │   └── settings.RData
+│   │           │   ├── sample_info.xlsx
+│   │           │   └── sessionInfo.txt
+│   │           ├── Subtype2_ASD_vs_Neurotypical
+│   │           │   ├── 00_std_err_logs
+│   │           │   │   ├── DMRichR_run.err
+│   │           │   │   └── DMRichR_run.out
+│   │           │   ├── 104846_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 104858_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 104881_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 104951_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 105129_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 105135_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 105151_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 105161_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 105284_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107284_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107287_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107300_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107305_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107344_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107367_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107384_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107397_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107417_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107419_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 107433_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 109021_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 109032_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 109075_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 109076_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 109089_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 109123_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 114984_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 114992_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115011_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115019_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115028_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115062_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115088_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115093_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115097_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115099_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115153_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115197_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 115207_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 126272_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 135586_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 135600_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138134_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138168_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138169_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138178_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138179_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138185_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138186_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138206_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138219_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138235_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138280_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138284_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138311_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138328_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138368_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138371_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138378_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138382_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138390_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138404_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138414_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138421_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138426_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138434_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138478_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138494_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138506_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138508_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138512_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138520_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138535_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138553_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 138558_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146558_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146626_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146646_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146649_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146651_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146652_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146657_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146681_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146683_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146699_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146710_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146716_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146722_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146723_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146734_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146751_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146784_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146787_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146801_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146811_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146840_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146841_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146848_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146884_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146888_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146901_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146916_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── 146922_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │           │   ├── CHARGE_dmrichr.slurm
+│   │           │   ├── DMReport.html
+│   │           │   ├── DMRichments
+│   │           │   │   ├── All DMRs_CpG_enrichments.pdf
+│   │           │   │   ├── All DMRs_CpG_enrichments.xlsx
+│   │           │   │   ├── All DMRs_genic_enrichments.pdf
+│   │           │   │   ├── All DMRs_genic_enrichments.xlsx
+│   │           │   │   ├── CpG_multi_plot.pdf
+│   │           │   │   ├── genic_multi_plot.pdf
+│   │           │   │   ├── Hypermethylated DMRs_CpG_enrichments.pdf
+│   │           │   │   ├── Hypermethylated DMRs_CpG_enrichments.xlsx
+│   │           │   │   ├── Hypermethylated DMRs_genic_enrichments.pdf
+│   │           │   │   ├── Hypermethylated DMRs_genic_enrichments.xlsx
+│   │           │   │   ├── Hypomethylated DMRs_CpG_enrichments.pdf
+│   │           │   │   ├── Hypomethylated DMRs_CpG_enrichments.xlsx
+│   │           │   │   ├── Hypomethylated DMRs_genic_enrichments.pdf
+│   │           │   │   └── Hypomethylated DMRs_genic_enrichments.xlsx
+│   │           │   ├── DMRs
+│   │           │   │   ├── background_annotated.xlsx
+│   │           │   │   ├── background_region_individual_smoothed_methylation.txt
+│   │           │   │   ├── backgroundRegions.bed
+│   │           │   │   ├── DMR_individual_smoothed_methylation.txt
+│   │           │   │   ├── DMRs_annotated.xlsx
+│   │           │   │   ├── DMRs.bed
+│   │           │   │   ├── DMRs.pdf
+│   │           │   │   ├── heatmap.pdf
+│   │           │   │   ├── human_imprinted_gene_overlaps.txt
+│   │           │   │   └── Rect_Manhtn.p.value.pdf
+│   │           │   ├── Extra
+│   │           │   │   └── bsseq_background.csv
+│   │           │   ├── Global
+│   │           │   │   ├── 20Kb Windows Density Plot.pdf
+│   │           │   │   ├── 20Kb Windows PCA.pdf
+│   │           │   │   ├── CpG Island Density Plot.pdf
+│   │           │   │   ├── CpG Island PCA.pdf
+│   │           │   │   ├── Single CpG Density Plot.pdf
+│   │           │   │   ├── Single CpG PCA.pdf
+│   │           │   │   └── smoothed_globalStats.xlsx
+│   │           │   ├── HOMER
+│   │           │   │   ├── background.bed
+│   │           │   │   ├── DMRs.bed
+│   │           │   │   ├── DMRs_hyper.bed
+│   │           │   │   └── DMRs_hypo.bed
+│   │           │   ├── interactiveMDS
+│   │           │   │   ├── 20Kb Windows MDS plot.html
+│   │           │   │   ├── CpG Island MDS plot.html
+│   │           │   │   ├── css
+│   │           │   │   │   ├── glimma.min.css
+│   │           │   │   │   └── src
+│   │           │   │   │       └── images
+│   │           │   │   │           ├── animated-overlay.gif
+│   │           │   │   │           ├── favicon.ico
+│   │           │   │   │           ├── sort_asc_disabled.png
+│   │           │   │   │           ├── sort_asc.png
+│   │           │   │   │           ├── sort_both.png
+│   │           │   │   │           ├── sort_desc_disabled.png
+│   │           │   │   │           ├── sort_desc.png
+│   │           │   │   │           ├── ui-bg_flat_0_aaaaaa_40x100.png
+│   │           │   │   │           ├── ui-bg_flat_75_ffffff_40x100.png
+│   │           │   │   │           ├── ui-bg_glass_55_fbf9ee_1x400.png
+│   │           │   │   │           ├── ui-bg_glass_65_ffffff_1x400.png
+│   │           │   │   │           ├── ui-bg_glass_75_dadada_1x400.png
+│   │           │   │   │           ├── ui-bg_glass_75_e6e6e6_1x400.png
+│   │           │   │   │           ├── ui-bg_glass_95_fef1ec_1x400.png
+│   │           │   │   │           ├── ui-bg_highlight-soft_75_cccccc_1x100.png
+│   │           │   │   │           ├── ui-icons_222222_256x240.png
+│   │           │   │   │           ├── ui-icons_2e83ff_256x240.png
+│   │           │   │   │           ├── ui-icons_454545_256x240.png
+│   │           │   │   │           ├── ui-icons_888888_256x240.png
+│   │           │   │   │           └── ui-icons_cd0a0a_256x240.png
+│   │           │   │   ├── js
+│   │           │   │   │   ├── 20Kb Windows MDS plot.js
+│   │           │   │   │   ├── CpG Island MDS plot.js
+│   │           │   │   │   ├── glimma.min.js
+│   │           │   │   │   └── Single CpG MDS plot.js
+│   │           │   │   └── Single CpG MDS plot.html
+│   │           │   ├── Machine_learning
+│   │           │   │   ├── common_dmrs_heatmap.pdf
+│   │           │   │   ├── Machine_learning_output_all.xlsx
+│   │           │   │   └── Machine_learning_report.html
+│   │           │   ├── Ontologies
+│   │           │   │   ├── GOfuncR_plot.pdf
+│   │           │   │   ├── GOfuncR_slimmed_results.xlsx
+│   │           │   │   ├── GOfuncR.xlsx
+│   │           │   │   ├── GREAT_plot.pdf
+│   │           │   │   ├── GREAT_results.xlsx
+│   │           │   │   └── GREAT_slimmed_results.xlsx
+│   │           │   ├── RData
+│   │           │   │   ├── bismark.RData
+│   │           │   │   ├── bsseq.RData
+│   │           │   │   ├── DMRs.RData
+│   │           │   │   ├── machineLearning.RData
+│   │           │   │   └── settings.RData
+│   │           │   ├── sample_info.xlsx
+│   │           │   └── sessionInfo.txt
+│   │           └── Subtype3_ASD_vs_Neurotypical
+│   │               ├── 00_std_err_logs
+│   │               │   ├── DMRichR_run.err
+│   │               │   └── DMRichR_run.out
+│   │               ├── 104795_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 104846_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 104881_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 104951_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 104955_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 104991_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 105135_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 105182_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 105261_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 105288_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107213_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107284_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107287_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107305_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107328_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107334_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107344_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107367_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107384_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107402_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107417_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 107419_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 109032_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 109037_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 109044_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 109060_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 109075_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 109083_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 109089_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 109093_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 109096_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 109171_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 114992_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 115008_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 115011_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 115019_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 115062_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 115092_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 115093_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 115101_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 115207_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 126251_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 126272_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 128151_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 135574_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138168_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138178_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138179_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138182_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138185_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138186_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138207_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138235_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138238_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138240_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138242_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138252_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138295_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138311_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138322_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138344_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138348_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138368_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138371_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138378_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138382_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138390_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138404_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138414_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138421_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138494_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138495_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138506_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138508_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138512_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138520_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138528_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138535_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138544_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138551_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138558_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138566_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 138574_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146558_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146633_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146663_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146669_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146678_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146722_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146725_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146729_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146745_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146750_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146753_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146759_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146768_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146786_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146787_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146808_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146815_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146840_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146841_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146916_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146920_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── 146922_merged_name_sorted.deduplicated.bismark.cov.gz.CpG_report.txt.gz
+│   │               ├── CHARGE_dmrichr.slurm
+│   │               ├── DMReport.html
+│   │               ├── DMRs
+│   │               │   ├── background_annotated.xlsx
+│   │               │   ├── background_region_individual_smoothed_methylation.txt
+│   │               │   ├── backgroundRegions.bed
+│   │               │   ├── DMR_individual_smoothed_methylation.txt
+│   │               │   ├── DMRs_annotated.xlsx
+│   │               │   ├── DMRs.bed
+│   │               │   └── DMRs.pdf
+│   │               ├── Extra
+│   │               │   └── bsseq_background.csv
+│   │               ├── Global
+│   │               │   ├── 20Kb Windows Density Plot.pdf
+│   │               │   ├── 20Kb Windows PCA.pdf
+│   │               │   └── smoothed_globalStats.xlsx
+│   │               ├── HOMER
+│   │               │   ├── background.bed
+│   │               │   ├── DMRs.bed
+│   │               │   ├── DMRs_hyper.bed
+│   │               │   └── DMRs_hypo.bed
+│   │               ├── interactiveMDS
+│   │               │   ├── 20Kb Windows MDS plot.html
+│   │               │   ├── css
+│   │               │   │   ├── glimma.min.css
+│   │               │   │   └── src
+│   │               │   │       └── images
+│   │               │   │           ├── animated-overlay.gif
+│   │               │   │           ├── favicon.ico
+│   │               │   │           ├── sort_asc_disabled.png
+│   │               │   │           ├── sort_asc.png
+│   │               │   │           ├── sort_both.png
+│   │               │   │           ├── sort_desc_disabled.png
+│   │               │   │           ├── sort_desc.png
+│   │               │   │           ├── ui-bg_flat_0_aaaaaa_40x100.png
+│   │               │   │           ├── ui-bg_flat_75_ffffff_40x100.png
+│   │               │   │           ├── ui-bg_glass_55_fbf9ee_1x400.png
+│   │               │   │           ├── ui-bg_glass_65_ffffff_1x400.png
+│   │               │   │           ├── ui-bg_glass_75_dadada_1x400.png
+│   │               │   │           ├── ui-bg_glass_75_e6e6e6_1x400.png
+│   │               │   │           ├── ui-bg_glass_95_fef1ec_1x400.png
+│   │               │   │           ├── ui-bg_highlight-soft_75_cccccc_1x100.png
+│   │               │   │           ├── ui-icons_222222_256x240.png
+│   │               │   │           ├── ui-icons_2e83ff_256x240.png
+│   │               │   │           ├── ui-icons_454545_256x240.png
+│   │               │   │           ├── ui-icons_888888_256x240.png
+│   │               │   │           └── ui-icons_cd0a0a_256x240.png
+│   │               │   └── js
+│   │               │       ├── 20Kb Windows MDS plot.js
+│   │               │       └── glimma.min.js
+│   │               ├── RData
+│   │               │   ├── bismark.RData
+│   │               │   ├── bsseq.RData
+│   │               │   ├── DMRs.RData
+│   │               │   └── settings.RData
+│   │               └── sample_info.xlsx
+│   └── LPA
+│       ├── 01_cleaning
+│       │   ├── ASDandTD_cleaned.rds
+│       │   ├── cleaning_log.csv
+│       │   └── removed_failed_library_prep.xlsx
+│       ├── 02_recoding
+│       │   ├── ASDandTD_recoded.rds
+│       │   └── recoding_summary.csv
+│       ├── 03_subsets
+│       │   ├── females_subset_log.csv
+│       │   ├── males_subset_log.csv
+│       │   └── males_TD_removed_missing_data.csv
+│       ├── 04_ASD_males
+│       │   ├── ASD_boxplots_k3.pdf
+│       │   ├── ASD_dunn_results.csv
+│       │   ├── ASD_kruskal_results.csv
+│       │   ├── ASD_line_plot_k3.pdf
+│       │   ├── ASD_model_comparison_fit_table.csv
+│       │   ├── ASD_PCA_k3.pdf
+│       │   ├── ASD_profile_plot_k3.pdf
+│       │   └── ASD_summary_by_class_k3.csv
+│       ├── 05_TD_males
+│       │   ├── TD_all_boxplots_k2.pdf
+│       │   ├── TD_boxplot_F2_SCQ_Total.pdf
+│       │   ├── TD_boxplot_Mullen_Early_Learning_Composite.pdf
+│       │   ├── TD_boxplot_Vineland_Composite_Score.pdf
+│       │   ├── TD_class_sizes_k2.csv
+│       │   ├── TD_line_plot_k2.pdf
+│       │   ├── TD_model_comparison_fit_table.csv
+│       │   ├── TD_PCA_k2.pdf
+│       │   ├── TD_profile_plot_k2.pdf
+│       │   ├── TD_summary_by_class_k2.csv
+│       │   └── TD_wilcoxon_results.csv
+│       ├── 06_combined_males
+│       │   ├── all_combined_boxplots.pdf
+│       │   ├── boxplot_Mullen_Early_Learning_Composite.pdf
+│       │   ├── boxplot_Vineland_Composite_Score.pdf
+│       │   ├── combined_ASD_TD_line_plot.pdf
+│       │   ├── combined_dunn_results.csv
+│       │   ├── combined_group_class_summary.csv
+│       │   └── combined_kruskal_results.csv
+│       ├── 07_ASD_females
+│       │   ├── ASD_boxplots_k2.pdf
+│       │   ├── ASD_dunn_results.csv
+│       │   ├── ASD_kruskal_results.csv
+│       │   ├── ASD_line_plot_k2.pdf
+│       │   ├── ASD_model_comparison_fit_table.csv
+│       │   ├── ASD_PCA_k2.pdf
+│       │   ├── ASD_profile_plot_k2.pdf
+│       │   ├── ASD_summary_by_class_k2.csv
+│       │   └── ASD_wilcoxon_results.csv
+│       ├── 08_TD_females
+│       │   ├── TD_class_sizes_k1.csv
+│       │   ├── TD_descriptive_summary_k1.csv
+│       │   ├── TD_line_plot_k1.pdf
+│       │   ├── TD_model_comparison_fit_table.csv
+│       │   ├── TD_PCA_k1.pdf
+│       │   ├── TD_profile_plot_k1.pdf
+│       │   └── TD_summary_by_class_k1.csv
+│       ├── 09_combined_females
+│       └── 10_DMRichR_inputs
+│           ├── all_comparisons_log.xlsx
+│           ├── females
+│           │   ├── comparison_log
+│           │   │   ├── females_comparison_log.csv
+│           │   │   └── females_comparison_log.xlsx
+│           │   ├── sample_ids
+│           │   │   ├── Subtype1_ASD_vs_Neurotypical_sample_ids.txt
+│           │   │   ├── Subtype1_ASD_vs_Subtype2_ASD_sample_ids.txt
+│           │   │   └── Subtype2_ASD_vs_Neurotypical_sample_ids.txt
+│           │   └── sample_info
+│           │       ├── Subtype1_ASD_vs_Neurotypical_sample_info.xlsx
+│           │       ├── Subtype1_ASD_vs_Subtype2_ASD_sample_info.xlsx
+│           │       └── Subtype2_ASD_vs_Neurotypical_sample_info.xlsx
+│           └── males
+│               ├── comparison_log
+│               │   ├── males_comparison_log.csv
+│               │   └── males_comparison_log.xlsx
+│               ├── sample_ids
+│               │   ├── Subtype1_ASD_vs_Neurotypical_sample_ids.txt
+│               │   ├── Subtype1_ASD_vs_Subtype2_ASD_sample_ids.txt
+│               │   ├── Subtype1_ASD_vs_Subtype3_ASD_sample_ids.txt
+│               │   ├── Subtype2_ASD_vs_Neurotypical_sample_ids.txt
+│               │   ├── Subtype2_ASD_vs_Subtype3_ASD_sample_ids.txt
+│               │   └── Subtype3_ASD_vs_Neurotypical_sample_ids.txt
+│               └── sample_info
+│                   ├── Subtype1_ASD_vs_Neurotypical_sample_info.xlsx
+│                   ├── Subtype1_ASD_vs_Subtype2_ASD_sample_info.xlsx
+│                   ├── Subtype1_ASD_vs_Subtype3_ASD_sample_info.xlsx
+│                   ├── Subtype2_ASD_vs_Neurotypical_sample_info.xlsx
+│                   ├── Subtype2_ASD_vs_Subtype3_ASD_sample_info.xlsx
+│                   └── Subtype3_ASD_vs_Neurotypical_sample_info.xlsx
+├── scripts
+│   ├── DMRichR
+│   │   ├── 01_link_bismark_reports.sh
+│   │   └── config_dmrichr.R
+│   └── LPA
+│       ├── 01_data_cleaning.R
+│       ├── 02_recode_variables.R
+│       ├── 03_subset_neuromeasures.R
+│       ├── 04_LPA_ASD_males.R
+│       ├── 05_LPA_TD_males.R
+│       ├── 06_LPA_combined_ASD_TD_males.R
+│       ├── 07_LPA_ASD_females.R
+│       ├── 08_LPA_TD_females.R
+│       ├── 09_LPA_combined_ASD_TD_females.R
+│       ├── 10_prepare_DMRichR_inputs.R
+│       ├── config.R
+│       ├── LPA_ASD_template.R
+│       ├── LPA_combined_ASD_TD_template.R
+│       ├── LPA_TD_template.R
+│       └── README.md
+├── tests
+│   ├── data
+│   │   ├── metadata
+│   │   └── processed
+│   ├── README.md
+│   ├── scripts
+│   │   ├── rename_files
+│   │   │   ├── 00_rename_growell_files.py
+│   │   │   ├── 01_move_by_timepoint.py
+│   │   │   └── 02_rename_to_userid_and_setdiff.py
+│   │   ├── run_local.sh
+│   │   ├── run_slurm.sh
+│   │   └── slurm
+│   │       ├── submit_rscript.sbatch
+│   │       └── submit_snakemake.sbatch
+│   └── smoke_test.sh
+└── tree.txt
+
+178 directories, 1456 files
