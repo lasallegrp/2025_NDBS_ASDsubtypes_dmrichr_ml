@@ -220,7 +220,66 @@ prepare_dmrichr_inputs <- function(sex_label) {
   # ============================================================
 
   comparison_log <- list()
+  # --- 0. All ASD participants vs Neurotypical ---
+  cat("\n--- Total ASD vs Neurotypical ---\n")
 
+  TOTAL_ASD_LABEL <- "Total_ASD"
+
+  # Confirm the labels give the intended DMRichR direction:
+  # Neurotypical is control and Total_ASD is experimental.
+  validate_alpha_order(
+    control_label      = TD_LABEL,
+    experimental_label = TOTAL_ASD_LABEL,
+    context            = paste(TD_LABEL, "vs", TOTAL_ASD_LABEL)
+  )
+
+  # Combine every ASD subtype into one ASD group
+  asd_total_subset <- ASD_classed %>%
+    dplyr::transmute(
+      Name      = Name,
+      Diagnosis = TOTAL_ASD_LABEL
+    )
+
+  # Use the same sex-specific refined TD comparison group
+  td_total_subset <- TD_refined %>%
+    dplyr::transmute(
+      Name      = Name,
+      Diagnosis = TD_LABEL
+    )
+
+  total_comparison_df <- bind_rows(
+    asd_total_subset,
+    td_total_subset
+  )
+
+  total_comparison_name <- paste0(
+    TOTAL_ASD_LABEL,
+    "_vs_",
+    TD_LABEL
+  )
+
+  total_result <- write_comparison(
+    df              = total_comparison_df,
+    comparison_name = total_comparison_name,
+    out_dir         = out_dir
+  )
+
+  if (!is.null(total_result)) {
+    comparison_log[[total_comparison_name]] <- data.frame(
+      comparison = total_comparison_name,
+      group1     = TOTAL_ASD_LABEL,
+      group2     = TD_LABEL,
+      n_group1   = sum(
+        total_comparison_df$Diagnosis == TOTAL_ASD_LABEL
+      ),
+      n_group2   = sum(
+        total_comparison_df$Diagnosis == TD_LABEL
+      ),
+      n_total    = nrow(total_comparison_df),
+      sex        = sex_label,
+      type       = "Total_ASD_vs_TD"
+    )
+  }
   # --- 1. Each ASD subtype vs TD ---
   cat("\n--- ASD subtypes vs Neurotypical ---\n")
   for (class_num in names(ASD_SUBTYPE_LABELS)) {

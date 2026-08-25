@@ -6,6 +6,8 @@
 ## Drop this in after your background/candidate regions object is written
 ## out in the DMRichr script (e.g. right after `background_annotated.xlsx`
 ## / the pre-filter regions object is generated).
+## pixi run --manifest-path /quobyte/lasallegrp/projects/CHARGE/WGBS/2025_NDBS_ASDsubtypes_dmrichr_ml_George/reproducibility/pixi/pixi.toml Rscript /quobyte/lasallegrp/projects/CHARGE
+## /WGBS/2025_NDBS_ASDsubtypes_dmrichr_ml_George/scripts/DMRichR/run_in_DMRs_folder/01_Volcano_plot.R
 ## ---------------------------------------------------------------------------
 
 library(readxl)
