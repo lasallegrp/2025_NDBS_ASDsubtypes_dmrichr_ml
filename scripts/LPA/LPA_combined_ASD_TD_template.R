@@ -15,15 +15,54 @@ dir.create(result_dir, showWarnings = FALSE, recursive = TRUE)
 
 # --- Load classed ASD and TD data ---
 # Uses LPA_CONFIG$asd_classed_file so filename stays in sync with config
-ASD_classed <- readRDS(
-  file.path(PATHS[[sex_label]], LPA_CONFIG$asd_classed_file))
+# --- Select sex-specific filenames from config ---
+asd_classed_filename <- LPA_CONFIG$asd_classed_file[[sex_label]]
+td_classed_filename  <- LPA_CONFIG$td_classed_file[[sex_label]]
 
-TD_classed <- readRDS(
-  file.path(PATHS[[sex_label]],
-            paste0("TD_lpa_classed_k", LPA_CONFIG$best_K_TD, ".rds")))
+# --- Construct complete input paths ---
+asd_classed_path <- file.path(
+  PATHS[[sex_label]],
+  asd_classed_filename
+)
 
-ASD_mullen_vineland_full <- readRDS(
-  file.path(PATHS[[sex_label]], "ASD_mullen_vineland_full.rds"))
+td_classed_path <- file.path(
+  PATHS[[sex_label]],
+  td_classed_filename
+)
+
+asd_full_path <- file.path(
+  PATHS[[sex_label]],
+  "ASD_mullen_vineland_full.rds"
+)
+
+# --- Display inputs for troubleshooting ---
+cat("Combined LPA inputs for", sex_label, ":\n")
+cat("  ASD classed:", asd_classed_path, "\n")
+cat("  TD classed: ", td_classed_path, "\n")
+cat("  ASD full:    ", asd_full_path, "\n")
+
+# --- Confirm that all required inputs exist ---
+required_files <- c(
+  ASD_classed = asd_classed_path,
+  TD_classed  = td_classed_path,
+  ASD_full     = asd_full_path
+)
+
+missing_files <- required_files[!file.exists(required_files)]
+
+if (length(missing_files) > 0L) {
+  stop(
+    "\nRequired combined-LPA input files are missing:\n",
+    paste0("  - ", missing_files, collapse = "\n"),
+    "\nRun the relevant ASD and TD scripts before the combined script."
+  )
+}
+
+# --- Load data ---
+ASD_classed <- readRDS(asd_classed_path)
+TD_classed  <- readRDS(td_classed_path)
+
+ASD_mullen_vineland_full <- readRDS(asd_full_path)
 
 cat("Combining ASD (n =", nrow(ASD_classed),
     ") and TD (n =", nrow(TD_classed), ") for", sex_label, "\n")
@@ -66,8 +105,8 @@ if (length(shared_neuro_vars) == 0) {
     "TD  columns: ", paste(colnames(TD_classed),  collapse = ", "), "\n",
     "----------------------------------------------------------------\n",
     "Check that both classed .rds files contain overlapping measures.\n",
-    "ASD classed file: ", LPA_CONFIG$asd_classed_file, "\n",
-    "TD  classed file: TD_lpa_classed_k", LPA_CONFIG$best_K_TD, ".rds\n",
+    "ASD classed file: ", asd_classed_filename, "\n",
+    "TD classed file: ", td_classed_filename, "\n",
     "================================================================\n"
   ))
 }
