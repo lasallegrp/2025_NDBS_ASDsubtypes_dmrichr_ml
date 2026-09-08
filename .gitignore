@@ -72,4 +72,4 @@ docs/
 #################################
 *.pdf
 !manuscript_pdfs/*.pdf
-# !tests/*
+!tests/data

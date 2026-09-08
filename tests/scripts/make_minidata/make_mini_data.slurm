@@ -1,13 +1,13 @@
 #!/bin/bash
-#SBATCH --job-name=Make_mini
+#SBATCH --job-name=Make_mini_data
 #SBATCH --mail-user=gekuodza@ucdavis.edu
 #SBATCH --mail-type=ALL
 #SBATCH --time=10:00:00
 #SBATCH --partition=high
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=40
+#SBATCH --cpus-per-task=30
 #SBATCH --mem=400G
-#SBATCH --account=lasallegrp
+#SBATCH --account=genome-center-grp
 #SBATCH --output=00_std_err_logs/comethyl_pearson_report.out
 #SBATCH --error=00_std_err_logs/comethyl_pearson_report.err
 #SBATCH --chdir=/quobyte/lasallegrp/projects/CHARGE/WGBS/2025_NDBS_ASDsubtypes_dmrichr_ml_George/tests
@@ -34,4 +34,4 @@ python /quobyte/lasallegrp/projects/CHARGE/WGBS/2025_NDBS_ASDsubtypes_dmrichr_ml
   --input_dir /quobyte/lasallegrp/projects/CHARGE/WGBS/2025_NDBS_epigenerator_George/cytosine_reports_combined \
   --output_dir /quobyte/lasallegrp/projects/CHARGE/WGBS/2025_NDBS_ASDsubtypes_dmrichr_ml_George/tests/data/processed/ \
   --sample_list /quobyte/lasallegrp/projects/CHARGE/WGBS/2025_NDBS_ASDsubtypes_dmrichr_ml_George/tests/data/processed/sample_ids.txt \
-  --keep_chr chr22 
+  --bed /quobyte/lasallegrp/projects/CHARGE/WGBS/2025_NDBS_ASDsubtypes_dmrichr_ml_George/tests/data/processed/NDBS_regions.bed
